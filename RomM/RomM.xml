@@ -23,7 +23,7 @@ https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
-  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/RomM/RomM.png</Icon>
+  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/RomM/RomM.png?raw=true</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
