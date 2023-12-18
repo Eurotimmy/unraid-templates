@@ -14,7 +14,7 @@ It enables you to efficiently manage and organize all your games from a web brow
 &#xD;
 Inspired by Jellyfin, RomM allows you to handle all your games through a modern interface while enhancing them with IGDB metadata.&#xD;
 &#xD;
-NOTE 1: You will need to create an IGDB 'Client ID' and 'Client Secret' here: &#xD;
+NOTE: You will need to create an IGDB 'Client ID' and 'Client Secret' here: &#xD;
 https://api-docs.igdb.com/#getting-started&#xD;
 &#xD;
 Additional features can be activated, see here: &#xD;
