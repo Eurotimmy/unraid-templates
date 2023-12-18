@@ -14,31 +14,27 @@ It enables you to efficiently manage and organize all your games from a web brow
 &#xD;
 Inspired by Jellyfin, RomM allows you to handle all your games through a modern interface while enhancing them with IGDB metadata.&#xD;
 &#xD;
-&#x26A1; Features&#x26A1; &#xD;
-&#x221A; Scan your game library (all at once or by platform) and enrich it with IGDB metadata.&#xD;
-&#x221A; Access your library via your web browser.&#xD;
-&#x221A; Easily choose from matching IGDB results if the scan doesn't find the right one.&#xD;
-&#x221A; Compatible with EmuDeck folder structures.&#xD;
-&#x221A; Supports games with multiple files.&#xD;
-&#x221A; Download games directly from your web browser.&#xD;
-&#x221A; Edit your game files directly from your web browser.&#xD;
-&#x221A; Upload games directly from your web-browser&#xD;
-&#x221A; Set a custom cover for each game&#xD;
-&#x221A; Includes region, revision/version, and extra tags support.&#xD;
-&#x221A; Works with SQLite or MariaDB.&#xD;
-&#x221A; Features a responsive design with dark mode support.</Overview>
+NOTE 1: You will need to create an IGDB 'Client ID' and 'Client Secret' here: &#xD;
+https://api-docs.igdb.com/#getting-started&#xD;
+&#xD;
+Additional features can be activated, see here: &#xD;
+https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml&#xD;
+&#xD;</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/zurdi15/romm/release/.github/resources/romm.svg</Icon>
+  <Icon>https://i.imgur.com/oSCeXtV.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1702889965</DateInstalled>
+  <DateInstalled>1702891179</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Host Port 1" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
-  <Config Name="IGDB_CLIENT_ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="IGDB_CLIENT_SECRET" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Host Port 1" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+  <Config Name="IGDB Client ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="Generate your 'Client ID' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="IGDB Client Secret" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="Generate your 'Client Secret' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="ROM Library" Target="/romm/library" Default="Path to your ROM library" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Resources" Target="/romm/resources" Default="" Mode="rw" Description="Path where roms metadata (covers) are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/resources</Config>
+  <Config Name="Resources" Target="/romm/logs" Default="" Mode="rw" Description="Path where logs are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/logs</Config>
 </Container>
