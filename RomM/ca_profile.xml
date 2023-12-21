@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/bubble.png</Icon>
+  <Profile>
+    Giving something back to the Unraid community... I think.
+  </Profile>
+  <DonateLink>https://paypal.me/eurotimmy?country.x=AU&locale.x=en_AU</DonateLink>
+  <DonateText>If you like my work please consider Donating.</DonateText>
+</Maintainer>
