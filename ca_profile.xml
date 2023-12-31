@@ -4,6 +4,6 @@
   <Profile>
     Giving something back to the Unraid community... I think.
   </Profile>
-  <DonateLink>https://paypal.me/eurotimmy?country.x=AU&locale.x=en_AU</DonateLink>
+  <DonateLink>https://paypal.me/eurotimmy?country.x=AU&amp;locale.x=en_AU</DonateLink>
   <DonateText>If you like my work please consider Donating.</DonateText>
 </Maintainer>
