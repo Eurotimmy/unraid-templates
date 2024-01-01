@@ -42,7 +42,7 @@ https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml
   <Config Name="Config file" Target="/romm" Default="" Mode="rw" Description="Config YAML file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm</Config>
   <Config Name="ROM Library" Target="/romm/library" Default="" Mode="rw" Description="Path to your ROM library" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="Resources" Target="/romm/resources" Default="" Mode="rw" Description="Path where roms metadata (covers) are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/resources</Config>
-  <Config Name="Resources" Target="/romm/logs" Default="" Mode="rw" Description="Path where logs are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/logs</Config>
+  <Config Name="Logs" Target="/romm/logs" Default="" Mode="rw" Description="Path where logs are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/logs</Config>
   <Config Name="IGDB Client ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="Generate your 'Client ID' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="IGDB Client Secret" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="Generate your 'Client Secret' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>
