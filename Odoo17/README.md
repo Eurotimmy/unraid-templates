@@ -15,6 +15,6 @@ Important notes for using Odoo17 on an Unraid server via the CA installation
 ```
 3. The CA container template can be viewed in 'ADVANCED VIEW' once installed, the `Post Arguments` should probably be removed **AFTER** the initial first successful boot / login
 - I used the `-i base` command as I had a hard time getting Odoo17 to initialise it's DB during it's first startup
-- I haven't noticed any issues leaving the `-i base` part in there on subsequent boots, but I am unsure if it makes any difference
+- I haven't noticed any issues leaving the `-i base` part in there on subsequent boots, but it runs again on each restart (I removed it to clean up the startup & logs)
 4. The default database name the Odoo docker container is looking for is `db`
 - This is just 'to note' as it took me some time to realise it...😴
