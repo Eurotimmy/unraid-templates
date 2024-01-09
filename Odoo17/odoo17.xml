@@ -35,7 +35,6 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
   <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
   <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
-  <Config Name="Data Location" Target="/var/lib/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/data</Config>
   <Config Name="PostgreSQL Database Username" Target="USER" Default="odoouser" Mode="" Description="PostgreSQL USER to Odoo database." Type="Variable" Display="always" Required="true" Mask="false">odoouser</Config>
   <Config Name="PostgreSQL Database Password" Target="PASSWORD" Default="odoopass" Mode="" Description="PostgreSQL PASSWORD to Odoo database." Type="Variable" Display="always" Required="true" Mask="true">odoopass</Config>
   <Config Name="PostgreSQL Database IP" Target="HOST" Default="" Mode="" Description="PostgreSQL HOST IP address to Odoo database." Type="Variable" Display="always" Required="true" Mask="false">e.g. 192.168.XXX.XXX</Config>
