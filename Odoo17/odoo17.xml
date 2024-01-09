@@ -20,7 +20,7 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
   <Category>Other:</Category>
   <WebUI>http://[IP]:[PORT:8069]</WebUI>
   <TemplateURL></TemplateURL>
-  <Icon></Icon>
+  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/odoo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
