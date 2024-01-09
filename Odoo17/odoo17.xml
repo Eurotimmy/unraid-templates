@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Odoo17</Name>
+  <Repository>odoo:17</Repository>
+  <Registry>https://hub.docker.com/_/odoo</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/odoo/docker/issues?q=is%3Aissue+is%3Aopen</Support>
+  <Project>https://github.com/odoo/docker</Project>
+  <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
+&#xD;
+Odoo is the world's easiest all-in-one management software.&#xD;
+&#xD;
+It includes hundreds of business apps:&#xD;
+CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
+&#xD;
+</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:8069]</WebUI>
+  <TemplateURL></TemplateURL>
+  <Icon></Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725156000</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL database</Requires>
+  <Config Name="Addons" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/docker/odoo/extra-addons</Config>
+  <Config Name="Configuration" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/docker/odoo/config</Config>
+  <Config Name="DB Username" Target="USER" Default="odoo" Mode="" Description="Username to connect to the database." Type="Variable" Display="always" Required="true" Mask="false">odoouser</Config>
+  <Config Name="Database Password" Target="PASSWORD" Default="odoopassword" Mode="" Description="Password for the username to connect to the database with." Type="Variable" Display="always" Required="true" Mask="true">odoosuperpassword</Config>
+  <Config Name="Database URL" Target="HOST" Default="" Mode="" Description="PostgreSQL database IP address." Type="Variable" Display="always" Required="true" Mask="false">192.168.0.150</Config>
+  <Config Name="Database Port" Target="PORT" Default="5432" Mode="" Description="PostgreSQL database port." Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
+</Container>
