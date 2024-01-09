@@ -26,7 +26,7 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
   <TemplateURL/>
   <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/odoo.png</Icon>
   <ExtraParams/>
-  <PostArgs/>
+  <PostArgs>-i base</PostArgs>
   <CPUset/>
   <DateInstalled>1725156000</DateInstalled>
   <DonateText/>
