@@ -28,11 +28,11 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
   <DonateText/>
   <DonateLink/>
   <Requires>PostgreSQL database</Requires>
-  <Config Name="Addons" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/docker/odoo/extra-addons</Config>
-  <Config Name="Configuration" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/docker/odoo/config</Config>
-  <Config Name="DB Username" Target="USER" Default="odoo" Mode="" Description="Username to connect to the database." Type="Variable" Display="always" Required="true" Mask="false">odoouser</Config>
-  <Config Name="Database Password" Target="PASSWORD" Default="odoopassword" Mode="" Description="Password for the username to connect to the database with." Type="Variable" Display="always" Required="true" Mask="true">odoosuperpassword</Config>
-  <Config Name="Database URL" Target="HOST" Default="" Mode="" Description="PostgreSQL database IP address." Type="Variable" Display="always" Required="true" Mask="false">192.168.0.150</Config>
-  <Config Name="Database Port" Target="PORT" Default="5432" Mode="" Description="PostgreSQL database port." Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
+  <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
+  <Config Name="PostgreSQL Database Username" Target="USER" Default="odoo" Mode="" Description="PostgreSQL USER to Odoo database." Type="Variable" Display="always" Required="true" Mask="false">odoo</Config>
+  <Config Name="PostgreSQL Database Password" Target="PASSWORD" Default="odoo" Mode="" Description="PostgreSQL PASSWORD to Odoo database." Type="Variable" Display="always" Required="true" Mask="true">odoo</Config>
+  <Config Name="PostgreSQL Database URL" Target="HOST" Default="" Mode="" Description="PostgreSQL HOST address to Odoo database." Type="Variable" Display="always" Required="true" Mask="false">192.168.0.150</Config>
+  <Config Name="PostgreSQL Database Port" Target="PORT" Default="5432" Mode="" Description="PostgreSQL PORT to Odoo database." Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
 </Container>
