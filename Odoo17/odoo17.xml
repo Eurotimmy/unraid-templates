@@ -11,15 +11,15 @@
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
   <Beta>true</Beta>
-  <Overview>Work in progress, marked as BETA... there are a couple of issues to fix. Feel free to help!! :) &#xD;
-&#xD;
-Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
+  <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
 &#xD;
 Odoo is the world's easiest all-in-one management software.&#xD;
 &#xD;
 It includes hundreds of business apps:&#xD;
 CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
 &#xD;
+IMPORTANT NOTE:&#xD;
+See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md&#xD;
 </Overview>
   <Category>Other:</Category>
   <WebUI>http://[IP]:[PORT:8069]</WebUI>
