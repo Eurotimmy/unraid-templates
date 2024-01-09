@@ -8,7 +8,7 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</ReadMe>
-  <Support>https://github.com/odoo/docker/issues?q=is%3Aissue+is%3Aopen</Support>
+  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17</Support>
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
   <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/dashboard.png</Screenshot>
