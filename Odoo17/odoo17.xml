@@ -11,7 +11,7 @@
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
   <Beta>true</Beta>
-  <Overview>---Marked as BETA as there is a permissions issue on the data folder in the container--- &#xD;
+  <Overview>---Marked as BETA... there are a couple of issues to fix (sorry!)--- &#xD;
 &#xD;
 Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
 &#xD;
@@ -31,7 +31,7 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
   <DateInstalled>1725156000</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>PostgreSQL - I suggest "postgresql15" by jj9987 in Unraid Community Apps</Requires>
+  <Requires>PostgreSQL "postgresql15" in CA</Requires>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
   <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
   <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
