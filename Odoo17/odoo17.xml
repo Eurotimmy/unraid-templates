@@ -11,7 +11,9 @@
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
   <Beta>true</Beta>
-  <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
+  <Overview>---Marked as BETA as there is a permissions issue on the data folder in the container--- &#xD;
+&#xD;
+Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
 &#xD;
 Odoo is the world's easiest all-in-one management software.&#xD;
 &#xD;
