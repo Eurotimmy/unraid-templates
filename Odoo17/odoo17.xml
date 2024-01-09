@@ -7,10 +7,10 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</ReadMe>
   <Support>https://github.com/odoo/docker/issues?q=is%3Aissue+is%3Aopen</Support>
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
-  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</ReadMe>
   <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/dashboard.png</Screenshot>
   <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/industries.png</Screenshot>
   <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/ecomm.png</Screenshot>
