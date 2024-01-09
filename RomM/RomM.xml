@@ -31,8 +31,8 @@ https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1702891179</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
+  <DonateText>Buy this Aussie a beer (or coffee)</DonateText>
+  <DonateLink>https://www.paypal.com/donate/?hosted_button_id=NU5FVN8NDE4S8</DonateLink>
   <Requires/>
   <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/home.png</Screenshot>
   <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/gallery.png</Screenshot>
