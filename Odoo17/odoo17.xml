@@ -7,34 +7,28 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</ReadMe>
   <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17</Support>
   <Project>https://github.com/odoo/docker</Project>
-  <ExtraSearchTerms>odoo odoo17 crm erp mrp</ExtraSearchTerms>
   <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
 &#xD;
 Odoo is the world's easiest all-in-one management software.&#xD;
 &#xD;
 It includes hundreds of business apps:&#xD;
-CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
+CRM | e-Commerce | Accounting | Inventory | PoS | Project management | MRP&#xD;
 &#xD;
-IMPORTANT NOTES:&#xD;
-See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md&#xD;
-&#xD;
-</Overview>
-  <Beta>False</Beta>
+:: IMPORTANT NOTES ::&#xD;
+See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</Overview>
   <Category>Other:</Category>
-  <Date>2024-01-10</Date>
   <WebUI>http://[IP]:[PORT:8069]</WebUI>
-  <TemplateURL></TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Odoo17/odoo17.xml</TemplateURL>
   <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/odoo.png</Icon>
   <ExtraParams/>
   <PostArgs>-i base</PostArgs>
   <CPUset/>
-  <DateInstalled>1725156000</DateInstalled>
-  <DonateText>Buy this Aussie a beer (or coffee)</DonateText>
-  <DonateLink>https://www.paypal.com/donate/?hosted_button_id=NU5FVN8NDE4S8</DonateLink>
-  <Requires>//postgresql15\\ in CA</Requires>
+  <DateInstalled>1704893528</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>//postgresql15\\ in Community Applicationss</Requires>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
   <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
   <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
