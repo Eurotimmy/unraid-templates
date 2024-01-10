@@ -20,12 +20,13 @@ CRM e-Commerce Accounting Inventory PoS Project management MRP&#xD;
 &#xD;
 IMPORTANT NOTES:&#xD;
 See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md&#xD;
+&#xD;
 </Overview>
   <Beta>False</Beta>
-  <Category>Other: Productivity:</Category>
+  <Category>Other:</Category>
   <Date>2024-01-10</Date>
   <WebUI>http://[IP]:[PORT:8069]</WebUI>
-  <TemplateURL/>
+  <TemplateURL></TemplateURL>
   <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/odoo.png</Icon>
   <ExtraParams/>
   <PostArgs>-i base</PostArgs>
