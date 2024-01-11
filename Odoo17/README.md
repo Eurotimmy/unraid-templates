@@ -8,10 +8,10 @@ Important notes for using Odoo17 on an Unraid server via the CA installation
 ```
   admin_passwd = (This password will become hashed on first start-up, for security reasons)
   db_host = (Use the IP address assigned to the PostgreSQL15 container, in the 'Docker' tab)
-  db_port = (Enter what your PostgreSQL15 'Container Port' is set to)
-  db_user = (Enter what your PostgreSQL15 'POSTGRES_USER' is set to)
-  db_password = (Enter what your PostgreSQL15 'POSTGRES_PASSWORD' is set to)
-  dn_name = (Enter what your PostgreSQL15 'POSTGRES_DB' is set to)
+  db_port = (Enter what your PostgreSQL15 'Container Port' is set to, from your PostgreSQL install)
+  db_user = (Enter what your PostgreSQL15 'POSTGRES_USER' is set to, from your PostgreSQL install)
+  db_password = (Enter what your PostgreSQL15 'POSTGRES_PASSWORD' is set to, from your PostgreSQL install)
+  dn_name = (Enter what your PostgreSQL15 'POSTGRES_DB' is set to, from your PostgreSQL install)
 ```
 3. The CA container template can be viewed in 'ADVANCED VIEW' once installed, the `Post Arguments` should probably be removed **AFTER** the initial first successful boot / login
 - I used the `-i base` command as I had a hard time getting Odoo17 to initialise it's DB during it's first startup
