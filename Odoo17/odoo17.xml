@@ -7,7 +7,6 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Deprecated>true</Deprecated>
   <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17</Support>
   <Project>https://github.com/odoo/docker</Project>
   <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
