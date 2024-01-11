@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Odoo17</Name>
+  <Name>Odoo17.0</Name>
   <Repository>odoo:17</Repository>
   <Registry>https://hub.docker.com/_/odoo</Registry>
   <Network>bridge</Network>
