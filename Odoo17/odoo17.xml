@@ -11,10 +11,10 @@
   <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17</Support>
   <Project>https://github.com/odoo/docker</Project>
   <ExtraSearchTerms>odoo odoo17 CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
-  <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/dashboard.png</Screenshot>
-  <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/ecomm.png</Screenshot>
-  <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/leadgen.png</Screenshot>
-  <Screenshot>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/screenshots/odoo_conf.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/dashboard.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/ecomm.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/leadgen.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/odoo_conf.png</Screenshot>
   <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
 &#xD;
 Odoo is the world's easiest all-in-one management software.&#xD;
@@ -34,7 +34,7 @@ See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/mai
   <DateInstalled>1704893528</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>PostgresQL //postgresql15\\ in Community Applicationss</Requires>
+  <Requires>PostgreSQL (//postgresql15\\) from Community Applicationss</Requires>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
   <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
   <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
