@@ -1,7 +1,7 @@
 **Notes for using Odoo17 on an Unraid server via the CA installation**
 
-Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template.
-Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below).
+Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template\
+Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
 
 ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
@@ -34,6 +34,6 @@ For my path (above), within the Unraid Shell / CLI:
   dn_name = (Enter what your PostgreSQL15 'POSTGRES_DB' is set to, from your PostgreSQL install)
 ```
 
-4. Once your container starts, open the Odoo Web UI from your Odoo icon\
+4. Once your container starts, open the Odoo Web UI from your Odoo icon
 - &nbsp;&nbsp;&nbsp;Username: admin
 - &nbsp;&nbsp;&nbsp;Password: admin
