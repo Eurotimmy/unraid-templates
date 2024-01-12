@@ -1,7 +1,9 @@
 **Notes for using Odoo17 on an Unraid server via the CA installation**
 
-Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template\
-Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
+- Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template
+- Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
+- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17/), please post any questions or contributions
+
 
 ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
@@ -37,3 +39,17 @@ For my path (above), within the Unraid Shell / CLI:
 4. Once your container starts, open the Odoo Web UI from your Odoo icon
 - &nbsp;&nbsp;&nbsp;Username: admin
 - &nbsp;&nbsp;&nbsp;Password: admin
+
+
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **NPM (Nginx Proxy Manager) - Reverse Proxy settings** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
+
+I am using NPM to reverse proxy my Odoo instance via my own domain name\
+In NPM on my `odoo.example.com` domain I use the following in my `location` settings (within the 'Advanced' tab)
+``` location / {
+    # Put your proxy_pass to your application here
+        proxy_pass $forward_scheme://$server:$port;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+```
