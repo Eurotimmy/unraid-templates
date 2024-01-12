@@ -1,4 +1,4 @@
-**Important notes for using Odoo17 on an Unraid server via the CA installation**
+**Notes for using Odoo17 on an Unraid server via the CA installation**
 
 Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template.
 Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below).
@@ -27,9 +27,10 @@ For my path (above), within the Unraid Shell / CLI:
 - &nbsp;&nbsp;&nbsp;Username: admin
 - &nbsp;&nbsp;&nbsp;Password: admin
 
-**Additional notes**
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
-The CA container template can be viewed in 'ADVANCED VIEW' once installed to make a change to the `Post Arguments` section\
-The `Post Arguments` should probably be removed **AFTER** the initial first successful boot / login
-- I used the `-i base` command as I had a hard time getting Odoo17 to initialise it's DB during it's first startup
-- I haven't noticed any issues leaving the `-i base` part in there on subsequent boots, but it runs again on each restart (I removed it to clean up the startup & logs)
+Return to Unraid to view the container template in 'ADVANCED VIEW' once Odoo has been installed and booted correctly, at least one time.\
+We will need to make a change to the `Post Arguments` section to avoid having a security exposure open via a default Admin account\
+The `Post Arguments` need to be **removed after the initial first successful boot**
+- I have used the `-i base` command as Odoo17 wouldn't initialise it's DB during it's first startup
+- The `-i base` command **must be removed** to make for a safe environment
