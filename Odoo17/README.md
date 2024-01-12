@@ -1,4 +1,7 @@
-Important notes for using Odoo17 on an Unraid server via the CA installation
+**Important notes for using Odoo17 on an Unraid server via the CA installation**
+
+Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template.
+Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below).
 
 1. The odoo.conf file needs to be copied in to the `Config Location` path on Unraid server
 - The `Config Location` path is selected by you in the Odoo17 settings when installing in Unraid CA
