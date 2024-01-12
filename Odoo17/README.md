@@ -28,6 +28,7 @@ For my path (above), within the Unraid Shell / CLI:
 - &nbsp;&nbsp;&nbsp;Password: admin
 
 **Additional notes**
+
 The CA container template can be viewed in 'ADVANCED VIEW' once installed to make a change to the `Post Arguments` section\
 The `Post Arguments` should probably be removed **AFTER** the initial first successful boot / login
 - I used the `-i base` command as I had a hard time getting Odoo17 to initialise it's DB during it's first startup
