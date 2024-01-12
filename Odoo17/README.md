@@ -23,10 +23,12 @@ For my path (above), within the Unraid Shell / CLI:
   dn_name = (Enter what your PostgreSQL15 'POSTGRES_DB' is set to, from your PostgreSQL install)
 ```
 
-4. The CA container template can be viewed in 'ADVANCED VIEW' once installed\
+4. Once your container starts, open the Odoo Web UI from your Odoo icon\
+- &nbsp;&nbsp;&nbsp;Username: admin
+- &nbsp;&nbsp;&nbsp;Password: admin
+
+**Additional notes**
+The CA container template can be viewed in 'ADVANCED VIEW' once installed to make a change to the `Post Arguments` section\
 The `Post Arguments` should probably be removed **AFTER** the initial first successful boot / login
 - I used the `-i base` command as I had a hard time getting Odoo17 to initialise it's DB during it's first startup
 - I haven't noticed any issues leaving the `-i base` part in there on subsequent boots, but it runs again on each restart (I removed it to clean up the startup & logs)
-
-5. The default database name the Odoo docker container is looking for is `db`\
-This is just 'to note' as it took me some time to realise it...😴
