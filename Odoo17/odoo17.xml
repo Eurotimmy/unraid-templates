@@ -34,7 +34,7 @@ See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/mai
   <DateInstalled>1704893528</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>PostgreSQL (//postgresql15\\) from Community Applicationss</Requires>
+  <Requires>PostgreSQL (//postgresql15\\) from Community Applications</Requires>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
   <Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/extra-addons</Config>
   <Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/odoo/config</Config>
