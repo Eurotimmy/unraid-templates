@@ -59,3 +59,7 @@ In NPM on my `odoo.example.com` domain I use the following in my `location` sett
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
 ```
+
+### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **Additional Resources** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
+
+Theres a great GitHub Gist [here](https://gist.github.com/Guidoom/d5db0a76ce669b139271a528a8a2a27f) with well documented options you can use in the `odoo.conf` file if you want greater control\
