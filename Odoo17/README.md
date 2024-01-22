@@ -13,6 +13,11 @@ The `Post Arguments` need to be **removed after the initial first successful boo
 - I have used the `-i base` command as Odoo17 wouldn't initialise it's DB during it's first startup
 - The `-i base` command **must be removed** to make for a safe environment
 
+### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **INSTALL WITHOUT DEMO DATA** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
+- To initialise the Odoo17 database without DEMO data being installed by default change your `Post Arguments` to be `-i base --without-demo=all --stop-after-init`
+- This will initialise Odoo17, then **NOT install the demo data**, and finally will stop Odoo17 from running.
+- Please restart your container **after** removing `-i base --without-demo=all --stop-after-init` from your `Post Arguments`
+
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **INSTALLATION STEPS** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
 
