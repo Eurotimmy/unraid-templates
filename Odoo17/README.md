@@ -50,14 +50,15 @@ For my path (above), within the Unraid Shell / CLI:
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **NPM (Nginx Proxy Manager) - Reverse Proxy settings** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
 I am using NPM to reverse proxy my Odoo instance via my own domain name\
+You will need to edit your `odoo.conf` file (in your `Config Location`) to include `proxy_mode = True`\
 In NPM on my `odoo.example.com` domain I use the following in my `location` settings (within the 'Advanced' tab)
 ``` location / {
-    # Put your proxy_pass to your application here
-        proxy_pass $forward_scheme://$server:$port;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_pass $forward_scheme://$server:$port;
+    proxy_set_header X-Forwarded-Host $http_host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_redirect off;    
 ```
 
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **Additional Resources** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
