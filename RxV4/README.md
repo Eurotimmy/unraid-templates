@@ -1,5 +1,5 @@
 # Reactive Resume V4 on an Unraid server via the CA installation
-Installing the Reactive Resume V4 container requires the installation of another 4 other supporting containers.\
+Installing the Reactive Resume V4 container requires the installation of another 4 supporting containers.\
 **This isn't a standalone container when run in Unraid CA**.\
 ![Unraid Application Stack for Reactive Resume V4](https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/Unraid%20Stack.png)\
 (Here's what we'll have by the end of the installation process)\
