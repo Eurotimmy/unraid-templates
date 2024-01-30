@@ -6,7 +6,7 @@
 (Here's what you'll have by the end of the process)
 
 - I needed to do some configuration to get things working properly, but I am happy I persisted with it because it's a great tool.
-- Many thanks to the auther of Reactive Resume [Amruth Pillai](https://github.com/AmruthPillai)!!
+- Many thanks to the author of **Reactive Resume**, please support [Amruth Pillai](https://github.com/AmruthPillai) for the great work! 🥇
   
 - Installing PostgreSQL 15, MinIO, Chrome (browserless) & Redis containers were pretty quick to do, once you know the right settings of course.
 - The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/152057-support-eurotimmy-reactive-resume-v4-rxv4/), please post any questions or contributions.
