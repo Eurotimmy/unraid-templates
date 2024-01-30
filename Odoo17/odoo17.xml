@@ -10,6 +10,7 @@
   <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo17/README.md</ReadMe>
   <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17</Support>
   <Project>https://github.com/odoo/docker</Project>
+  <Beta>False</Beta>
   <ExtraSearchTerms>odoo odoo17 CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
   <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/dashboard.png</Screenshot>
   <Screenshot>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo17/screenshots/ecomm.png</Screenshot>
