@@ -9,6 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/149738-support-eurotimmy-romm-rom-manager-by-zurdi15/</Support>
   <Project>https://github.com/zurdi15/romm</Project>
+  <Beta>False</Beta>
   <Overview>RomM (ROM Manager) is a game library manager focused on retro gaming. &#xD;
 It enables you to efficiently manage and organize all your games from a web browser.&#xD;
 &#xD;
