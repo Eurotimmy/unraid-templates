@@ -5,14 +5,18 @@ I needed to do some configuration to get things working properly, but I am happy
 Many thanks to the author of [Reactive Resume](https://github.com/AmruthPillai/Reactive-Resume), please support [Amruth Pillai](https://github.com/AmruthPillai) for the great work! 🥇
 
 **NOTE: This isn't a standalone container when run in Unraid CA**.\
-<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/Unraid%20Stack.png" alt="unraid reactive resume stack" width="200" height="auto">\
 \
 I refer to the container names shown in the image above by these names throughout the rest of this document:
-- `Reactive_Resume_V4`
-- `Chrome_RxV4`
-- `MinIO_RxV4`
-- `PostgreSQL_RxV4`
-- `Redis_RxV4`
+- `Reactive_Resume_V4`\
+<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/1%20-%20RxV4.png" alt="reactive resume" width="250" height="auto">\
+- `Chrome_RxV4`\
+<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/5%20-%20Chrome.png" alt="unraid reactive resume stack" width="250" height="auto">\
+- `MinIO_RxV4`\
+<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/4%20-%20MinIO.png" alt="minio" width="250" height="auto">\
+- `PostgreSQL_RxV4`\
+<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/3%20-%20PostgreSQL.png" alt="postgresql" width="250" height="auto">\
+- `Redis_RxV4`\
+<img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/2%20-%20Redis.png" alt="redis" width="250" height="auto">\
 
 \
 Installing PostgreSQL 15, MinIO, Chrome (browserless) & Redis containers were pretty quick to do, once you know the right settings of course.\
