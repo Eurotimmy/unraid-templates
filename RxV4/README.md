@@ -9,10 +9,10 @@ Many thanks to the author of [Reactive Resume](https://github.com/AmruthPillai/R
 \
 I refer to the container names shown in the image above by these names throughout the rest of this document:
 - `Reactive_Resume_V4`
-- `RxV4_Chrome`
-- `RxV4_MinIO`
-- `RxV4_PostgreSQL`
-- `RxV4_Redis`
+- `Chrome_RxV4`
+- `MinIO_RxV4`
+- `PostgreSQL_RxV4`
+- `Redis_RxV4`
 
 \
 Installing PostgreSQL 15, MinIO, Chrome (browserless) & Redis containers were pretty quick to do, once you know the right settings of course.\
@@ -52,10 +52,10 @@ In the Unraid CLI we can make 5x random values, all 15 characters in length by e
 (copy the above command, click <img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/Unraid%20CLI.png" alt="unraid open cli icon" width="20" height="auto"> in the top right corner of Unraid, then paste and execute the command)\
 \
 Record each of the 5 values output by the command above, we'll use these during several of the container configurations
-- Value #1 > `CHROME_TOKEN` in `Reactive_Resume_V4` **AND** `TOKEN` in `RxV4_Chrome`
+- Value #1 > `CHROME_TOKEN` in `Reactive_Resume_V4` **AND** `TOKEN` in `Chrome_RxV4`
 - Value #2 > `ACCESS_TOKEN_SECRET` in `Reactive_Resume_V4` 
 - Value #3 > `REFRESH_TOKEN_SECRET` in `Reactive_Resume_V4` 
-- Value #4 > `STORAGE_ACCESS_KEY` in `Reactive_Resume_V4` **AND** `MINIO_ROOT_USER` in `RxV4_MinIO`
-- Value #5 > `STORAGE_SECRET_KEY` in `Reactive_Resume_V4` **AND** `MINIO_ROOT_USER` in `RxV4_MinIO`
+- Value #4 > `STORAGE_ACCESS_KEY` in `Reactive_Resume_V4` **AND** `MINIO_ROOT_USER` in `MinIO_RxV4`
+- Value #5 > `STORAGE_SECRET_KEY` in `Reactive_Resume_V4` **AND** `MINIO_ROOT_PASSWORD` in `MinIO_RxV4`
 
   
