@@ -23,7 +23,7 @@ I refer to the container names shown in the image above by these names throughou
 <img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/2%20-%20Redis.png" alt="redis" width="250" height="auto">
 
 \
-Installing PostgreSQL 15, MinIO, Chrome (browserless) & Redis containers were pretty quick to do, once you know the right settings of course.\
+Installing PostgreSQL, MinIO, Chrome (browserless) & Redis containers were pretty quick to do.\
 \
 The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/152057-support-eurotimmy-reactive-resume-v4-rxv4/), please post any questions or ideas / contributions.
 
