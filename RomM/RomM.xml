@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>RomM</Name>
-  <Repository>zurdi15/romm:latest</Repository>
+  <Repository>zurdi15/romm:2.3.1</Repository>
   <Registry>https://hub.docker.com/r/zurdi15/romm</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -10,6 +10,11 @@
   <Support>https://forums.unraid.net/topic/149738-support-eurotimmy-romm-rom-manager-by-zurdi15/</Support>
   <Project>https://github.com/zurdi15/romm</Project>
   <Beta>False</Beta>
+  <Branch>
+    <Tag>latest</Tag>
+    <TagDescription>The latest version. NOTE: Version 3.X onwards has breaking changes, please see the 'Support' link to add the required changes</TagDescription>
+    <Repository>zurdi15/romm:latest</Repository>
+  </Branch>
   <Overview>RomM (ROM Manager) is a game library manager focused on retro gaming. &#xD;
 It enables you to efficiently manage and organize all your games from a web browser.&#xD;
 &#xD;
