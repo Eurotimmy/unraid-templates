@@ -51,7 +51,7 @@ NOTE: Please copy the file at https://github.com/zurdi15/romm/blob/release/examp
 You can configure the application settings using the file /romm/config.yml&#xD;
 &#xD;
 NOTE: You will need to create an IGDB 'Client ID' and 'Client Secret' from the Twitch Dev API as descibed here: &#xD;
-https://api-docs.igdb.com/#getting-started&#xD;
+https://api-docs.igdb.com/#account-creation&#xD;
 &#xD;
 Additional features can be activated, see here: &#xD;
 https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml&#xD;
