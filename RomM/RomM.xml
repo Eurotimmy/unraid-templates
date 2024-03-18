@@ -12,13 +12,13 @@
   <Beta>False</Beta>
   <Changes>
   [center][font size=4]RomM Change Log[/font][/center]
-  For the most comprehensive list of changes please see github.com/zurdi15/romm/releases - but, here are some highlights.  
-  [b]15.03.2024:[/b] Unraid CA template asks the installer to pick between 'latest' or '2.3.1' release tags
-  [b]12.03.2024:[/b] v3.0.0 version officially released (on my mum's birthday, thanks zurdi15!)
-  [b]04.03.2024:[/b] Migration guide for v2.X to v3.X here -> https://github.com/zurdi15/romm/wiki/Upgrading-to-3.0
-  [b]04.03.2024:[/b] Unraid Forums Support thread has a comprehensive guide to running the v3.X release candidates (Thx to Green Dragon)
-  [b]09.01.2024:[/b] The last of the v2.X versions is released (v2.3.1)
-  [b]18.12.2023:[/b] The Unraid CA RomM template was released in Unraid Community Applications
+  For the most comprehensive list of changes please see github.com/zurdi15/romm/releases - but, here are some highlights. &#xD;  
+  [b]15.03.2024:[/b] Unraid CA template asks the installer to pick between 'latest' or '2.3.1' release tags &#xD;
+  [b]12.03.2024:[/b] v3.0.0 version officially released (on my mum's birthday, thanks zurdi15!) &#xD;
+  [b]04.03.2024:[/b] Migration guide for v2.X to v3.X here -> https://github.com/zurdi15/romm/wiki/Upgrading-to-3.0 &#xD;
+  [b]04.03.2024:[/b] Unraid Forums Support thread has a comprehensive guide to running the v3.X release candidates (Thx to Green Dragon) &#xD;
+  [b]09.01.2024:[/b] The last of the v2.X versions is released (v2.3.1) &#xD;
+  [b]18.12.2023:[/b] The Unraid CA RomM template was released in Unraid Community Applications &#xD;
   </Changes>
   <Branch>
     <Tag>latest</Tag>
