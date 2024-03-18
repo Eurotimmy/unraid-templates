@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Reactive-Resume-V4</Name>
+  <Repository>amruthpillai/reactive-resume:latest</Repository>
+  <Registry>https://hub.docker.com/r/amruthpillai/reactive-resume/tags</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/README.md</ReadMe>
+  <Support>https://forums.unraid.net/topic/152057-support-eurotimmy-reactive-resume-v4-rxv4/</Support>
+  <Project>https://github.com/AmruthPillai/Reactive-Resume</Project>
+  <Beta>False</Beta>
+  <Overview>A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.&#xD;
+It&#x2019;s 100% free, forever! No ads, no user tracking, just pure resume-building bliss.&#xD;
+&#xD;
+New features in Reative Resume V4:&#xD;
+- A sleek, polished user interface that makes navigation a breeze.&#xD;
+- Faster PDF generation to get your resume out there quicker.&#xD;
+- Integration with OpenAI for smarter assistance.&#xD;
+- Brand new, highly customisable templates to fit your unique style.&#xD;
+- Comprehensive documentation with user-friendly guides.&#xD;
+- Enhanced security with two-factor authentication.&#xD;
+- Available in multiple languages, contributed by the community.&#xD;
+- Quality of life features such as locking resumes, adding personal notes to resumes, tracking views and downloads on your public resume etc.&#xD;
+&#xD;
+IMPORTANT TO NOTE: &#xD;
+This container requires 4 additional containers to be configured correctly, up and running or Reactive resume won't work.&#xD;
+I have documented the additional containers in the README at https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/README.md&#xD;
+</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/RxV4/RxV4.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1706596971</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL&#xD; MinIO&#xD;Chrome&#xD;Redis</Requires>
+  <Config Name="Host Port 1" Target="3000" Default="3000" Mode="tcp" Description="Assign the port you'll use to connect to your resume / cv builder.&#13;&#10;Adjust this port number if you have a conflict with another container or device already using it." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="PUBLIC_URL" Target="PUBLIC_URL" Default="http://your.cv.app.address.or.IP" Mode="" Description="URL (and port) to login to your resume / cv builder." Type="Variable" Display="always" Required="true" Mask="false">http://your.cv.app.address.or.IP</Config>
+  <Config Name="STORAGE_URL" Target="STORAGE_URL" Default="http://your.cv.storage.address.or.IP/default" Mode="" Description="URL to login to your shared resumes / cvs.&#13;&#10;Please ensure you append default to the end." Type="Variable" Display="always" Required="true" Mask="false">http://your.cv.storage.address.or.IP/default</Config>
+  <Config Name="CHROME_TOKEN" Target="CHROME_TOKEN" Default="chrome_token" Mode="" Description="Replace this with your own Chrome token and reflect the same in the browserless/chrome container configuration" Type="Variable" Display="always" Required="true" Mask="false">chrome_token</Config>
+  <Config Name="CHROME_URL" Target="CHROME_URL" Default="ws://chrome:3010" Mode="" Description="URL to your 'browserless/chrome' container. This will produce your PDF versions." Type="Variable" Display="always" Required="true" Mask="false">ws://your.chrome.address.or.IP:3010</Config>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://postgres:postgres@postgres:5432/postgres" Mode="" Description="DB Connection details.&#13;&#10;postgresql://user:password@address:port/databasename" Type="Variable" Display="always" Required="true" Mask="false">postgresql://postgres:postgres@your.postgresql.address.or.IP:5432/postgres</Config>
+  <Config Name="ACCESS_TOKEN_SECRET" Target="ACCESS_TOKEN_SECRET" Default="access_token_secret" Mode="" Description="Generate your own token value." Type="Variable" Display="always" Required="true" Mask="false">access_token_secret</Config>
+  <Config Name="REFRESH_TOKEN_SECRET" Target="REFRESH_TOKEN_SECRET" Default="refresh_token_secret" Mode="" Description="Generate your own token value." Type="Variable" Display="always" Required="true" Mask="false">refresh_token_secret</Config>
+  <Config Name="MAIL_FROM" Target="MAIL_FROM" Default="your@example.com" Mode="" Description="Your email address to send from. &#13;&#10;RxV4 uses this to validate your account creations with an email confirmation." Type="Variable" Display="always" Required="true" Mask="false">youremail@example.com</Config>
+  <Config Name="SMTP_URL" Target="SMTP_URL" Default="smtp://username:password@smtp.example.com:587" Mode="" Description="Your smtp server details. &#13;&#10;smtp://user:password@smtpserveraddress:port" Type="Variable" Display="always" Required="true" Mask="false">smtp://username:password@smtp.example.com:587</Config>
+  <Config Name="STORAGE_ENDPOINT" Target="STORAGE_ENDPOINT" Default="Address.or.IP.of.MinIO" Mode="" Description="Address or IP to MinIO container" Type="Variable" Display="always" Required="true" Mask="false">Address.or.IP.of.MinIO</Config>
+  <Config Name="STORAGE_PORT" Target="STORAGE_PORT" Default="9768" Mode="" Description="Port to MinIO container" Type="Variable" Display="always" Required="true" Mask="false">9768</Config>
+  <Config Name="STORAGE_ACCESS_KEY" Target="STORAGE_ACCESS_KEY" Default="MinIO_User" Mode="" Description="Replace this with your own MinIO user and reflect the same in the 'MinIO' container configuration" Type="Variable" Display="always" Required="true" Mask="false">MinIO_User</Config>
+  <Config Name="STORAGE_SECRET_KEY" Target="STORAGE_SECRET_KEY" Default="MinIO_Pass" Mode="" Description="Replace this with your own MinIO password and reflect the same in the 'MinIO' container configuration" Type="Variable" Display="always" Required="true" Mask="false">MinIO_Pass</Config>
+  <Config Name="REDIS_URL" Target="REDIS_URL" Default="redis://default:password@redis:6379" Mode="" Description="Redis connection.&#13;&#10;redis://default:password@address:port" Type="Variable" Display="always" Required="true" Mask="false">redis://default:password@your.redis.address.or.IP:6379</Config>
+  <Config Name="VITE_DISABLE_SIGNUPS" Target="VITE_DISABLE_SIGNUPS" Default="false" Mode="" Description="To disable public signups if you host this facing public Internet (via reverse proxy). As at 25 Jan 2024 this option doesn't work. See GitHub issues for more info." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="STORAGE_USE_SSL" Target="STORAGE_USE_SSL" Default="false" Mode="" Description="Is an SSL cert used for the 'MinIO' connection?" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="STORAGE_BUCKET" Target="STORAGE_BUCKET" Default="default" Mode="" Description="Storage bucket name, put this at the end of STORAGE_URL or just leave on the default" Type="Variable" Display="advanced" Required="false" Mask="false">default</Config>
+  <Config Name="STORAGE_REGION" Target="STORAGE_REGION" Default="us-east-1" Mode="" Description="Storage bucket region, optional." Type="Variable" Display="advanced" Required="false" Mask="false">us-east-1</Config>
+  <Config Name="NODE_ENV" Target="NODE_ENV" Default="production" Mode="" Description="The Node environment setting." Type="Variable" Display="advanced" Required="false" Mask="false">production</Config>
+  <Config Name="PORT" Target="PORT" Default="3000" Mode="" Description="The Port environment setting. NOTE: I leave this as default (3000) and adjust the host port 1 instead." Type="Variable" Display="advanced" Required="false" Mask="false">3000</Config>
+</Container>
