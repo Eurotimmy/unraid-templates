@@ -38,7 +38,12 @@ I have documented the additional containers in the README at https://github.com/
   <DateInstalled>1706596971</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>PostgreSQL&#xD; MinIO&#xD;Chrome&#xD;Redis</Requires>
+  <Requires>
+    PostgreSQL 
+    MinIO 
+    Chrome 
+    Redis 
+  </Requires>
   <Config Name="Host Port 1" Target="3000" Default="3000" Mode="tcp" Description="Assign the port you'll use to connect to your resume / cv builder.&#13;&#10;Adjust this port number if you have a conflict with another container or device already using it." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
   <Config Name="PUBLIC_URL" Target="PUBLIC_URL" Default="http://your.cv.app.address.or.IP" Mode="" Description="URL (and port) to login to your resume / cv builder." Type="Variable" Display="always" Required="true" Mask="false">http://your.cv.app.address.or.IP</Config>
   <Config Name="STORAGE_URL" Target="STORAGE_URL" Default="http://your.cv.storage.address.or.IP/default" Mode="" Description="URL to login to your shared resumes / cvs.&#13;&#10;Please ensure you append default to the end." Type="Variable" Display="always" Required="true" Mask="false">http://your.cv.storage.address.or.IP/default</Config>
