@@ -1,5 +1,8 @@
 # Reactive Resume V4 on an Unraid server via the CA installation
-Installing the Reactive Resume V4 container requires the installation of another 4 supporting containers.
+
+### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **YouTube Video** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
+You can use the tips and advice below for your installation, but if you prefer to see a video walkthrough of the installation... it's here on [YouTube](https://youtu.be/JTbwzIoJe-A).\
+Installing the Reactive Resume V4 container requires the installation of another 4 supporting containers, all included in the video walkthrough.
 
 I needed to do some configuration to get things working properly, but I am happy I persisted with it because it's a great tool.\
 Many thanks to the author of [Reactive Resume](https://github.com/AmruthPillai/Reactive-Resume), please support [Amruth Pillai](https://github.com/AmruthPillai) for the great work! 🥇
@@ -29,17 +32,14 @@ The support thread for this container is located in the Unraid Forums [here](htt
 
 
 
-### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
-
-**I am currently documenting and screen capturing my setup to put here for others**\
-**Feel free to contribute and assist me to do better!!**
+### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTES** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
 
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **Prerequisites** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
 Before we begin working on the containers themselves we need to do some setup in advance.
 
-### (Required) Email > Make a new "App Password" for your Gmail account ([Example](https://www.zdnet.com/article/gmail-app-passwords-what-they-are-how-to-create-one-and-why-to-use-them/) & [Example](https://mariushosting.com/synology-activate-gmail-smtp-for-docker-containers/))
+### (Recommended) Email > Make a new "App Password" for your Gmail account ([Example](https://www.zdnet.com/article/gmail-app-passwords-what-they-are-how-to-create-one-and-why-to-use-them/) & [Example](https://mariushosting.com/synology-activate-gmail-smtp-for-docker-containers/))
 - or similarly for another email provider, you'll need to know your "email username", "email password", "smtp url" & "smtp port"
 - This information will be used to create the `SMTP_URL` value in the `Reactive_Resume_V4` container
 
@@ -59,7 +59,8 @@ In the Unraid CLI we can make 5x random values, all 15 characters in length by e
 \
 (copy the above command, click <img src="https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/screenshots/Unraid%20CLI.png" alt="unraid open cli icon" width="20" height="auto"> in the top right corner of Unraid, then paste and execute the command)\
 \
-Record each of the 5 values output by the command above, we'll use these during several of the container configurations
+Record each of the 5 values output by the command above, we'll use these during several of the container configurations.\
+I have included an Excel file within this repo if you wish to use it.
 - Value #1 > `CHROME_TOKEN` in `Reactive_Resume_V4` **AND** `TOKEN` in `Chrome_RxV4`
 - Value #2 > `ACCESS_TOKEN_SECRET` in `Reactive_Resume_V4` 
 - Value #3 > `REFRESH_TOKEN_SECRET` in `Reactive_Resume_V4` 
