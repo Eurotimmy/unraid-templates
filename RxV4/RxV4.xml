@@ -26,7 +26,8 @@ New features in Reative Resume V4:&#xD;
 &#xD;
 IMPORTANT TO NOTE: &#xD;
 This container requires 4 additional containers to be configured correctly, up and running or Reactive resume won't work.&#xD;
-I have documented the additional containers in the README at https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/README.md&#xD;
+I have created an installation walkthrough video on YouTube at : https://youtu.be/JTbwzIoJe-A &#xD;
+There is also some GitHub documentation at : https://github.com/Eurotimmy/unraid-templates/blob/main/RxV4/README.md&#xD;
 </Overview>
   <Category>Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
@@ -39,10 +40,10 @@ I have documented the additional containers in the README at https://github.com/
   <DonateText/>
   <DonateLink/>
   <Requires>
-    PostgreSQL 
-    MinIO 
-    Chrome 
-    Redis 
+    **PostgreSQL **
+    **MinIO **
+    **Chrome **
+    **Redis **
   </Requires>
   <Config Name="Host Port 1" Target="3000" Default="3000" Mode="tcp" Description="Assign the port you'll use to connect to your resume / cv builder.&#13;&#10;Adjust this port number if you have a conflict with another container or device already using it." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
   <Config Name="PUBLIC_URL" Target="PUBLIC_URL" Default="http://your.cv.app.address.or.IP" Mode="" Description="URL (and port) to login to your resume / cv builder." Type="Variable" Display="always" Required="true" Mask="false">http://your.cv.app.address.or.IP</Config>
