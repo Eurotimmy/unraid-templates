@@ -1,82 +1,77 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>RomM</Name>
-  <Repository>zurdi15/romm:2.3.1</Repository>
-  <Registry>https://hub.docker.com/r/zurdi15/romm</Registry>
-  <Network>bridge</Network>
-  <MyIP/>
-  <Shell>sh</Shell>
-  <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/149738-support-eurotimmy-romm-rom-manager-by-zurdi15/</Support>
-  <Project>https://github.com/rommapp/romm</Project>
-  <Beta>False</Beta>
-  <Changes>
-  [center][font size=4]RomM Change Log[/font][/center]
-  For the most comprehensive list of changes please see github.com/zurdi15/romm/releases - but, here are some highlights. &#xD;  
-  [b]15.03.2024:[/b] Unraid CA template asks the installer to pick between 'latest' or '2.3.1' release tags &#xD;
-  [b]12.03.2024:[/b] v3.0.0 version officially released (on my mum's birthday, thanks zurdi15!) &#xD;
-  [b]04.03.2024:[/b] Migration guide for v2.X to v3.X here -> https://github.com/zurdi15/romm/wiki/Upgrading-to-3.0 &#xD;
-  [b]04.03.2024:[/b] Unraid Forums Support thread has a comprehensive guide to running the v3.X release candidates (Thx to Green Dragon) &#xD;
-  [b]09.01.2024:[/b] The last of the v2.X versions is released (v2.3.1) &#xD;
-  [b]18.12.2023:[/b] The Unraid CA RomM template was released in Unraid Community Applications &#xD;
-  </Changes>
-  <Branch>
-    <Tag>latest</Tag>
-    <TagDescription>The latest version (currently v3.X)</TagDescription>
-    <Repository>rommapp/romm:latest</Repository>
-    <Config Name="WebUI Port" Target="8080" Default="8091" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8091</Config>
-    <Config Name="Config" Target="/romm/config" Default="" Mode="rw" Description="[Optional] Path where config.yml is stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/config</Config>
-    <Config Name="Library" Target="/romm/library" Default="" Mode="rw" Description="Your game library" Type="Path" Display="always" Required="false" Mask="false"/>
-    <Config Name="Assets" Target="/romm/assets" Default="" Mode="rw" Description="Uploaded saves, states, etc." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/assets</Config>
-    <Config Name="Logs" Target="/romm/logs" Default="" Mode="rw" Description="Path where logs are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/logs</Config>
-    <Config Name="Resources" Target="/romm/resources" Default="" Mode="rw" Description="Resources fetched from IGDB (covers, screenshots, etc.)" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/resources</Config>
-    <Config Name="Redis Data" Target="/redis-data" Default="" Mode="rw" Description="Cached data for background tasks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/redis-data</Config>    
-    <Config Name="RomM DB Host" Target="DB_HOST" Default="romm-db" Mode="" Description="Default is: `romm-db`" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM DB Name" Target="DB_NAME" Default="romm" Mode="" Description="Should match MYSQL_DATABASE in mariadb" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM DB User" Target="DB_USER" Default="romm-user" Mode="" Description="Should match MYSQL_USER in mariadb" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM DB Password" Target="DB_PASSWD" Default="" Mode="" Description="Should match MYSQL_PASSWORD in mariadb" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM DB Port" Target="DB_PORT" Default="3306" Mode="" Description="Should match your mariadb port. Default is: `3306`" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="IGDB Client ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="Generate an ID and SECRET in IGDB:&#13;&#10;https://api-docs.igdb.com/#account-creation" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="IGDB Client Secret" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="Generate an ID and SECRET in IGDB:&#13;&#10;https://api-docs.igdb.com/#account-creation" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM Auth Secret" Target="ROMM_AUTH_SECRET_KEY" Default="" Mode="" Description="Generate a key with `openssl rand -hex 32`" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM Auth Username" Target="ROMM_AUTH_USERNAME" Default="admin" Mode="" Description="Default is: `admin`" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="RomM Auth Password" Target="ROMM_AUTH_PASSWORD" Default="admin" Mode="" Description="Default is: `admin`" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="UMASK" Target="UMASK" Default="000" Mode="" Description="Default is: 000" Type="Variable" Display="advanced-hide" Required="false" Mask="false">000</Config>
-  </Branch>
-  <Overview>RomM (ROM Manager) is a game library manager focused on retro gaming. &#xD;
-It enables you to efficiently manage and organize all your games from a web browser.&#xD;
-&#xD;
-Inspired by Jellyfin, RomM allows you to handle all your games through a modern interface while enhancing them with IGDB metadata.&#xD;
-&#xD;
-NOTE: Please copy the file at https://github.com/zurdi15/romm/blob/release/examples/config.example.yml to your /mnt/user/appdata/romm (or equivalent) folder as 'config.yml'
-You can configure the application settings using the file /romm/config.yml&#xD;
-&#xD;
-NOTE: You will need to create an IGDB 'Client ID' and 'Client Secret' from the Twitch Dev API as descibed here: &#xD;
-https://api-docs.igdb.com/#account-creation&#xD;
-&#xD;
-Additional features can be activated, see here: &#xD;
-https://github.com/zurdi15/romm/blob/release/examples/docker-compose.example.yml&#xD;
-&#xD;</Overview>
-  <Category>Tools:</Category>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <TemplateURL/>
-  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/RomM/RomM.png</Icon>
-  <ExtraParams>-u 99:100</ExtraParams>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1702891179</DateInstalled>
-  <DonateText>Buy this Aussie a beer (or coffee)</DonateText>
-  <DonateLink>https://www.paypal.com/donate/?hosted_button_id=NU5FVN8NDE4S8</DonateLink>
-  <Requires>All v3.X versions require MariaDB - </Requires>
-  <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/home.png</Screenshot>
-  <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/gallery.png</Screenshot>
-  <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/details.png</Screenshot>
-  <Screenshot>https://raw.githubusercontent.com/zurdi15/romm/master/.github/resources/screenshots/search_2.png</Screenshot>
-  <Config Name="WebUI Port" Target="8080" Default="8091" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8091</Config>
-  <Config Name="Config" Target="/romm" Default="" Mode="rw" Description="Config YAML file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm</Config>
-  <Config Name="Library" Target="/romm/library" Default="" Mode="rw" Description="Your game library" Type="Path" Display="always" Required="false" Mask="false"/>
-  <Config Name="Resources" Target="/romm/resources" Default="" Mode="rw" Description="Path where roms metadata (covers) are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/resources</Config>
-  <Config Name="Logs" Target="/romm/logs" Default="" Mode="rw" Description="Path where logs are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/logs</Config>
-  <Config Name="IGDB Client ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="Generate your 'Client ID' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="IGDB Client Secret" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="Generate your 'Client Secret' here:&#13;&#10;https://api-docs.igdb.com/#getting-started" Type="Variable" Display="always" Required="false" Mask="false"/>
+   <Name>romm</Name>
+   <Repository>rommapp/romm:latest</Repository>
+   <Registry>https://hub.docker.com/r/rommapp/romm</Registry>
+   <Network>romm_net</Network>
+   <MyIP/>
+   <Shell>sh</Shell>
+   <Privileged>false</Privileged>
+   <Support>https://github.com/rommapp/romm/issues</Support>
+   <Project>https://github.com/rommapp/romm</Project>
+   <Overview>
+   A beautiful, powerful, self-hosted rom manager
+
+   RomM (ROM Manager) allows you to scan, enrich, and browse your game collection with a clean and resonsive interface. With support for multiple platforms, various naming schemes, and custom tags, RomM is a must-have for anyone who plays on emulators.
+
+   Features:
+   • Scans your existing games library and enhances it with metadata from IGDB and MobyGames
+   • Supports a large number of platforms
+   • Play games directly from the browser using EmulatorJS
+   • Share your library with friends while limiting access and permissions
+   • View, upload, update, and delete games from any modern web browser
+
+   Before starting, generate your IGDB and Mobygames API keys: https://github.com/rommapp/romm/wiki/Generate-API-Keys
+
+   Instructions for setting up RomM can be found at https://github.com/rommapp/romm/wiki/Unraid-Setup
+   </Overview>
+   <ExtraSearchTerms>rom emulation gaming</ExtraSearchTerms>
+   <Beta>False</Beta>
+   <Category>MediaApp:Other</Category>
+   <Date>2023-08-06</Date>
+   <WebUI>http://[IP]:[PORT:8080]</WebUI>
+   <TemplateURL>https://raw.githubusercontent.com/rommapp/unraid-templates/main/rommapp/romm.xml</TemplateURL>
+   <Icon>https://raw.githubusercontent.com/rommapp/romm/master/.github/resources/isotipo.png</Icon>
+   <ExtraParams/>
+   <PostArgs/>
+   <CPUset/>
+   <DonateText>Support the team</DonateText>
+   <DonateLink>https://opencollective.com/romm</DonateLink>
+   <Requires>
+   MariaDB
+   </Requires>
+   <Screenshot>https://raw.githubusercontent.com/rommapp/romm/master/.github/resources/screenshots/home.png</Screenshot>
+   <Screenshot>https://raw.githubusercontent.com/rommapp/romm/master/.github/resources/screenshots/gallery.png</Screenshot>
+   <Screenshot>https://raw.githubusercontent.com/rommapp/romm/master/.github/resources/screenshots/details.png</Screenshot>
+   <Screenshot>https://raw.githubusercontent.com/rommapp/romm/master/.github/resources/screenshots/search.png</Screenshot>
+   <Changes>
+   [center][font size=4]RomM Change Log[/font][/center]
+   For a comprehensive list of changes, see https://github.com/rommapp/romm/releases&#xD;
+   [b]07-08-2024:[/b] Offical RomM template released in Unraid Community Applications store &#xD;
+   </Changes>
+   <Config Name="Port" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+   <Config Name="Library" Target="/romm/library/" Default="/romm/library" Mode="rw" Description="Game files" Type="Path" Display="always" Required="true" Mask="false"/>
+   <Config Name="Resources" Target="/romm/resources/" Default="" Mode="rw" Description="Metadata storage (covers, screenshots, etc.)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/romm/resources</Config>
+   <Config Name="Assets" Target="/romm/assets/" Default="" Mode="rw" Description="Uploaded saves, states, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/romm/assets</Config>
+   <Config Name="Config" Target="/romm/config/" Default="" Mode="rw" Description="Folder for config.yml" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/romm/config</Config>
+   <Config Name="DB_HOST" Target="DB_HOST" Default="mariadb" Mode="" Description="Database host" Type="Variable" Display="always" Required="true" Mask="false"/>
+   <Config Name="DB_PORT" Target="DB_PORT" Default="3306" Mode="" Description="Database port" Type="Variable" Display="always" Required="true" Mask="false"/>
+   <Config Name="DB_USER" Target="DB_USER" Default="romm" Mode="" Description="Database user" Type="Variable" Display="always" Required="true" Mask="false"/>
+   <Config Name="DB_NAME" Target="DB_NAME" Default="romm" Mode="" Description="Database name" Type="Variable" Display="always" Required="true" Mask="false"/>
+   <Config Name="DB_PASSWD" Target="DB_PASSWD" Default="" Mode="" Description="Database password for DB_USER" Type="Variable" Display="always" Required="true" Mask="true"/>
+   <Config Name="ROMM_AUTH_SECRET_KEY" Target="ROMM_AUTH_SECRET_KEY" Default="" Mode="" Description="Generate a key with `openssl rand -hex 32`" Type="Variable" Display="always" Required="true" Mask="true"/>
+   <Config Name="IGDB_CLIENT_ID" Target="IGDB_CLIENT_ID" Default="" Mode="" Description="IGDB Client ID" Type="Variable" Display="always" Required="false" Mask="false"/>
+   <Config Name="IGDB_CLIENT_SECRET" Target="IGDB_CLIENT_SECRET" Default="" Mode="" Description="IGDB Client Secret" Type="Variable" Display="always" Required="false" Mask="true"/>
+   <Config Name="STEAMGRIDDB_API_KEY" Target="STEAMGRIDDB_API_KEY" Default="" Mode="" Description="SteamGridDB API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+   <Config Name="MOBYGAMES_API_KEY" Target="MOBYGAMES_API_KEY" Default="" Mode="" Description="MobyGames API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+   <Config Name="ENABLE_RESCAN_ON_FILESYSTEM_CHANGE" Target="ENABLE_RESCAN_ON_FILESYSTEM_CHANGE" Default="false" Mode="" Description="Run a scan when the filesystem changes" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="RESCAN_ON_FILESYSTEM_CHANGE_DELAY" Target="RESCAN_ON_FILESYSTEM_CHANGE_DELAY" Default="5" Mode="" Description="Delay in seconds before running a scan" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="ENABLE_SCHEDULED_RESCAN" Target="ENABLE_SCHEDULED_RESCAN" Default="false" Mode="" Description="Run a scan on a schedule" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="SCHEDULED_RESCAN_CRON" Target="SCHEDULED_RESCAN_CRON" Default="0 3 * * *" Mode="" Description="Cron expression for scheduled scan" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB" Target="ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB" Default="false" Mode="" Description="Update Switch TitleDB on a schedule" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="SCHEDULED_UPDATE_SWITCH_TITLEDB_CRON" Target="SCHEDULED_UPDATE_SWITCH_TITLEDB_CRON" Default="0 4 * * *" Mode="" Description="Cron expression for scheduled Switch TitleDB update" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="SCAN_TIMEOUT" Target="SCAN_TIMEOUT" Default="14400" Mode="" Description="Timeout in seconds for background scans" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="GUNICORN_WORKERS" Target="GUNICORN_WORKERS" Default="2" Mode="" Description="Number of Gunicorn workers" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="DISABLE_CSRF_PROTECTION" Target="DISABLE_CSRF_PROTECTION" Default="false" Mode="" Description="[EXPERTS ONLY] Disable CSRF protection" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+   <Config Name="DISABLE_DOWNLOAD_ENDPOINT_AUTH" Target="DISABLE_DOWNLOAD_ENDPOINT_AUTH" Default="false" Mode="" Description="[EXPERTS ONLY] Disable authentication for the download endpoint" Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
