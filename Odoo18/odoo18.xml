@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Odoo18</Name>
+  <Repository>odoo:18</Repository>
+  <Registry>https://hub.docker.com/_/odoo</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo18/README.md</ReadMe>
+  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-odoo18/</Support>
+  <Project>https://github.com/odoo/docker</Project>
+  <Beta>False</Beta>
+  <ExtraSearchTerms>odoo odoo18 CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
+  <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
+&#xD;
+Odoo is the world's easiest all-in-one management software.&#xD;
+&#xD;
+It includes hundreds of business apps:&#xD;
+CRM | e-Commerce | Accounting | Inventory | PoS | Project management | MRP&#xD;
+&#xD;
+:: IMPORTANT NOTES ::&#xD;
+See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo18/README.md</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:8069]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Odoo18/odoo18.xml</TemplateURL>
+  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo18/odoo.png</Icon>
+  <ExtraParams>--user=100:101</ExtraParams>
+  <PostArgs>-i base</PostArgs>
+  <CPUset/>
+  <DateInstalled>1704893528</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL (postgresql v12 or later) from Community Applications</Requires>
+<Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access Odoo" Type="Port" Display="always" Required="false" Mask="false">8069</Config>
+<Config Name="Data Location" Target="/var/lib/odoo" Default="" Mode="rw" Description="Odoo filestore (attachments, sessions, etc.)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo18/data</Config>
+<Config Name="Config Location" Target="/etc/odoo" Default="" Mode="rw" Description="Directory containing odoo.conf" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo18/config</Config>
+<Config Name="Addons Location" Target="/mnt/extra-addons" Default="" Mode="rw" Description="Custom/community addons" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo18/extra-addons</Config>
+</Container>
