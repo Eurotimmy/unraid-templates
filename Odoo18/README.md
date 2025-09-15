@@ -1,4 +1,4 @@
-# Notes for using Odoo17 on an Unraid server via the CA installation
+# Notes for using Odoo18 on an Unraid server via the CA installation
 
 - Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template
 - Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
@@ -8,7 +8,7 @@
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
 
 I hit a couple of odd error's, most likely my own fault...
-I needed to use the `Extra Parameters` in the Unraid template 'ADVANCED VIEW', with the value set as `--user=100:101` due to having some issues with the container being able to write to the 3 mapped volumes\
+I needed to use the `Extra Parameters` in the Unraid template 'ADVANCED VIEW', with the value set as `--user=100:101` due to having some issues with the container being able to write to the 3 mapped volumes
 
 The process I followed was to check the uid and gid in the Odoo18 container with `docker exec -it Odoo18 sh -c 'echo "uid=$(id -u) gid=$(id -g)"'` which returned `uid=100 gid=101`\
 I then manually made the folder I had seen in the error logs with `mkdir -p /mnt/user/appdata/odoo18/data/sessions`\
