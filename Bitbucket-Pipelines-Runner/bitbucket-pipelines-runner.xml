@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>bitbucket-pipelines-runner</Name>
+  <Repository>docker-public.packages.atlassian.com/sox/atlassian/bitbucket-pipelines-runner:latest</Repository>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>/bin/bash</Shell>
+  <Privileged>false</Privileged>
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Bitbucket-Pipelines-Runner/README.md</ReadMe>
+  <Support>https://forums.unraid.net/topic/193905-support-eurotimmy-bitbucket-pipelines-runner/</Support>
+  <Project>https://bitbucket.org/product/features/pipelines</Project>
+  <Overview>Bitbucket Pipelines self-hosted runner (Linux Docker) for Unraid. Outbound-only connection; launches pipeline step containers on the host via Docker socket.</Overview>
+  <Category>Tools:CI-CD</Category>
+  <Icon>https://wac-cdn.atlassian.com/misc/assets/bitbucket-favicon.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset></CPUset>
+
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Bitbucket-Pipelines-Runner/bitbucket-pipelines-runner.xml</TemplateURL>
+  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Bitbucket-Pipelines-Runner/bitbucket-pipelines-runner.png</Icon>
+
+  <!-- Paths -->
+  <Config Name="Appdata (runner dir)" Target="/runner" Default="/mnt/user/appdata/bitbucket-runner" Mode="rw" Description="Persistent runner state and logs." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Allows the runner to launch step containers on the host." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Docker Containers (optional logs)" Target="/var/lib/docker/containers" Default="/var/lib/docker/containers" Mode="ro" Description="Optional: read-only access to step container logs." Type="Path" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- Environment -->
+  <Config Name="Account UUID" Target="ACCOUNT_UUID" Default="" Mode="" Description="Workspace UUID (include braces), from Bitbucket 'Add runner'." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Repository UUID (optional)" Target="REPOSITORY_UUID" Default="" Mode="" Description="Only for repo-scoped runners; leave blank for workspace-scoped." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Runner UUID" Target="RUNNER_UUID" Default="" Mode="" Description="Unique runner ID from Bitbucket 'Add runner'." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Runner Name" Target="RUNNER_NAME" Default="unraid-runner-1" Mode="" Description="Friendly display name shown in Bitbucket." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Runner Labels" Target="RUNNER_LABELS" Default="unraid,linux.docker" Mode="" Description="Comma-separated labels you will target in bitbucket-pipelines.yml." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="OAuth Client ID" Target="OAUTH_CLIENT_ID" Default="" Mode="" Description="From Bitbucket 'Add runner'." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="OAuth Client Secret" Target="OAUTH_CLIENT_SECRET" Default="" Mode="" Description="From Bitbucket 'Add runner'." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Working Directory" Target="WORKING_DIRECTORY" Default="/runner" Mode="" Description="Runner working directory (leave default)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- No ports; runner dials out -->
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish></Publish>
+  </Networking>
+
+  <WebUI></WebUI>
+  <Description>
+    ## Bitbucket Pipelines Runner (Linux Docker)
+    - Connects outbound to Bitbucket (no ports).
+    - Spawns pipeline step containers using the host Docker daemon.
+    - **Security note:** Mounting the Docker socket grants the runner root-equivalent control of the host; restrict who can target this runner.
+  </Description>
+</Container>
