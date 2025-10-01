@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Typesense</Name>
+  <Repository>typesense/typesense:29.0</Repository>
+  <Registry>https://hub.docker.com/r/typesense/typesense</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Typesense/README.md</ReadMe>
+  <Support>https://forums.unraid.net/topic/193903-support-eurotimmy-typesense-typesense-dashboard/</Support>
+  <Project>https://github.com/typesense/typesense</Project>
+  <Beta>False</Beta>
+
+  <ExtraSearchTerms>typesense search engine algolia alternative full-text faceted filtering vector search typo tolerant instantsearch</ExtraSearchTerms>
+
+  <Overview>Typesense is an open-source, typo-tolerant search engine focused on simplicity, performance and developer ergonomics. It supports fast full-text search with faceting/filtering, synonyms, geosearch and vector search.&#xD;
+&#xD;
+This template deploys the official Typesense container (v29.0) on Unraid, exposing the HTTP API on port 8108 and persisting data to /data. On first start you must set a bootstrap Admin API key (TYPESENSE_API_KEY). You can later create scoped keys for front-end clients. CORS can be enabled for browser apps via TYPESENSE_ENABLE_CORS.&#xD;
+&#xD;
+:: IMPORTANT NOTES ::&#xD;
+• You must set TYPESENSE_DATA_DIR=/data (already included) otherwise the server will exit with 'Invalid configuration: Data directory is not specified'.&#xD;
+• Back up the mapped /data directory; Typesense rebuilds in-memory indexes from it on restart.&#xD;
+• Do not expose the Admin API publicly. Place behind a reverse proxy and restrict access/origins as appropriate.&#xD;
+• Documentation: Server configuration and environment variables, API keys, and backups are covered in the official docs.&#xD;
+</Overview>
+
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:8108]/health</WebUI>
+
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Typesense/typesense.xml</TemplateURL>
+  <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Typesense/typesense.png</Icon>
+
+  <!-- Ports -->
+  <Config Name="API Port" Target="8108" Default="8108" Mode="tcp" Description="Typesense HTTP API port" Type="Port" Display="always" Required="false" Mask="false">8108</Config>
+
+  <!-- Paths -->
+  <Config Name="Data Location" Target="/data" Default="" Mode="rw" Description="Persistent data directory for collections, snapshots and indexes" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/typesense/data</Config>
+
+  <!-- Environment -->
+  <Config Name="TYPESENSE_API_KEY" Target="TYPESENSE_API_KEY" Default="" Mode="" Description="Bootstrap Admin API key (required on first run). Use scoped keys for clients." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="TYPESENSE_DATA_DIR" Target="TYPESENSE_DATA_DIR" Default="/data" Mode="" Description="Directory where Typesense stores data (maps to the container path above)." Type="Variable" Display="advanced" Required="true" Mask="false">/data</Config>
+  <Config Name="Enable CORS" Target="TYPESENSE_ENABLE_CORS" Default="true" Mode="" Description="Set to true to allow browser apps to call the API. For production, restrict origins via your reverse proxy." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+</Container>

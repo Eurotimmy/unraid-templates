@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Typesense-Dashboard</Name>
+  <Repository>d97tum/typesense-ui-client:latest</Repository>
+  <Registry>https://hub.docker.com/r/d97tum/typesense-ui-client</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <ReadMe/>
+  <Support>https://forums.unraid.net/topic/193903-support-eurotimmy-typesense-typesense-dashboard/</Support>
+  <Project>https://hub.docker.com/r/d97tum/typesense-ui-client</Project>
+  <Beta>False</Beta>
+
+  <ExtraSearchTerms>typesense dashboard ui admin console gui</ExtraSearchTerms>
+
+  <Overview>Lightweight web UI for Typesense to browse collections, run searches and perform basic document edits. This container exposes the dashboard on port 8081 and connects to your Typesense API using environment variables.&#xD;
+&#xD;
+:: IMPORTANT NOTES ::&#xD;
+• Use a **scoped key** for read/search actions. For admin operations (e.g., schema changes), use an admin/scoped key with the minimum required actions.&#xD;
+• If the dashboard is served from a different origin than Typesense (e.g., 8081 → 8108), ensure CORS is enabled on Typesense (TYPESENSE_ENABLE_CORS=true).&#xD;
+• For HTTPS dashboards connecting to HTTP Typesense, your browser may block mixed content. Prefer HTTPS end-to-end.&#xD;
+</Overview>
+<Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Typesense-Dashboard/typesense-dashboard.png</Icon>
+<TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Typesense-Dashboard/typesense-dashboard.xml</TemplateURL>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+
+  <!-- Ports -->
+  <Config Name="Dashboard Port" Target="8081" Default="8081" Mode="tcp" Description="Web UI port" Type="Port" Display="always" Required="false" Mask="false">8081</Config>
+
+  <!-- Environment for connecting to your Typesense server -->
+  <Config Name="Typesense Host" Target="TYPESENSE_HOST" Default="" Mode="" Description="Hostname or IP of your Typesense server" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Typesense Port" Target="TYPESENSE_PORT" Default="8108" Mode="" Description="Typesense API port" Type="Variable" Display="always" Required="true" Mask="false">8108</Config>
+  <Config Name="Typesense Protocol" Target="TYPESENSE_PROTOCOL" Default="http" Mode="" Description="http or https" Type="Variable" Display="always" Required="true" Mask="false">http</Config>
+  <Config Name="Typesense API Key" Target="TYPESENSE_API_KEY" Default="" Mode="" Description="Admin or scoped API key to use from the dashboard (mask this)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+</Container>
