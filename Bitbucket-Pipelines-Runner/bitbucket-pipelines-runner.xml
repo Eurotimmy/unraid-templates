@@ -10,15 +10,14 @@
   <Support>https://forums.unraid.net/topic/193905-support-eurotimmy-bitbucket-pipelines-runner/</Support>
   <Project>https://bitbucket.org/product/features/pipelines</Project>
   <Overview>Bitbucket Pipelines self-hosted runner (Linux Docker) for Unraid. Outbound-only connection; launches pipeline step containers on the host via Docker socket.</Overview>
-  <Category>Tools:CI-CD</Category>
-  <Icon>https://wac-cdn.atlassian.com/misc/assets/bitbucket-favicon.png</Icon>
+  <Category>Other:</Category>
   <ExtraParams>--restart=unless-stopped</ExtraParams>
   <PostArgs></PostArgs>
   <CPUset></CPUset>
-
   <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Bitbucket-Pipelines-Runner/bitbucket-pipelines-runner.xml</TemplateURL>
   <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Bitbucket-Pipelines-Runner/bitbucket-pipelines-runner.png</Icon>
-
+  <Beta>False</Beta>
+  
   <!-- Paths -->
   <Config Name="Appdata (runner dir)" Target="/runner" Default="/mnt/user/appdata/bitbucket-runner" Mode="rw" Description="Persistent runner state and logs." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Allows the runner to launch step containers on the host." Type="Path" Display="always" Required="true" Mask="false"/>
@@ -48,3 +47,4 @@
     - **Security note:** Mounting the Docker socket grants the runner root-equivalent control of the host; restrict who can target this runner.
   </Description>
 </Container>
+
