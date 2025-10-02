@@ -12,12 +12,12 @@
   <Overview>
 A lightweight, feature-rich web dashboard for managing and browsing your Typesense collections.
 
-• Default WebUI: http://[IP]:[PORT:80]/  
+• Default WebUI: http://IP:PORT/  
 • Optional auto-login: mount a JSON file to /srv/config.json (contains your Typesense host/port/protocol and API key).  
 • If serving behind a sub-path, set PUBLIC_PATH (e.g. "/dashboard").  
 • If your Typesense server is on a different origin, ensure it’s started with CORS enabled.
 
-Note: When binding a single file, Docker will create a directory if the host path doesn’t exist. Create the file first.
+Note: If you want auto-login functionality, create the file config.json in your Unraid server first (typically at: /mnt/user/appdata/typesense-dashboard/config.json).
   </Overview>
   <Category>Productivity: Tools</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
