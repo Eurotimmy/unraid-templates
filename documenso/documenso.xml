@@ -10,7 +10,7 @@
   <Support>https://forums.unraid.net/topic/193917-support-eurotimmy-documenso/</Support>
   <Project>https://github.com/documenso/documenso</Project>
   <Overview>Documenso &#x2014; open-source e-signature platform (self-hosted DocuSign alternative). Exposes a web UI on the configured port (default 3000). Requires PostgreSQL and SMTP settings. If you use a reverse proxy, set NEXT_PUBLIC_WEBAPP_URL and NEXTAUTH_URL to your public HTTPS URL (no trailing slash).</Overview>
-  <Category>Productivity: Office</Category>
+  <Category>Other:</Category>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/documenso/documenso.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/documenso/documenso.png</Icon>
@@ -62,3 +62,4 @@
 
   <TailscaleStateDir/>
 </Container>
+
