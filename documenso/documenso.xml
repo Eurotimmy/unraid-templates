@@ -1,1 +1,64 @@
- 
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>documenso</Name>
+  <Repository>ghcr.io/documenso/documenso:latest</Repository>
+  <Registry>https://github.com/documenso/documenso/pkgs/container/documenso</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/193917-support-eurotimmy-documenso/</Support>
+  <Project>https://github.com/documenso/documenso</Project>
+  <Overview>Documenso &#x2014; open-source e-signature platform (self-hosted DocuSign alternative). Exposes a web UI on the configured port (default 3000). Requires PostgreSQL and SMTP settings. If you use a reverse proxy, set NEXT_PUBLIC_WEBAPP_URL and NEXTAUTH_URL to your public HTTPS URL (no trailing slash).</Overview>
+  <Category>Productivity: Office</Category>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/documenso/documenso.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/documenso/documenso.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+
+  <Config Name="HTTP Port" Target="3000" Default="3000" Mode="tcp" Description="Web UI / API port (container 3000 &#x2192; host)" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+
+  <Config Name="NEXT_PUBLIC_WEBAPP_URL" Target="NEXT_PUBLIC_WEBAPP_URL" Default="https://documenso.example.com" Mode="" Description="Public base URL used in links/emails (no trailing slash)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="NEXTAUTH_URL" Target="NEXTAUTH_URL" Default="" Mode="" Description="Canonical public URL for Auth.js/NextAuth (no trailing slash)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="AUTH_TRUST_HOST" Target="AUTH_TRUST_HOST" Default="true" Mode="" Description="Trust reverse proxy headers for Auth.js (true when behind NPM)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="NEXT_PUBLIC_DISABLE_SIGNUP" Target="NEXT_PUBLIC_DISABLE_SIGNUP" Default="true" Mode="" Description="Disable self-service /signup (true = staff invite/guest signing only)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+
+  <Config Name="NEXTAUTH_SECRET" Target="NEXTAUTH_SECRET" Default="" Mode="" Description="Long random secret for Auth.js/NextAuth (&#x2265;32 chars)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="NEXT_PRIVATE_ENCRYPTION_KEY" Target="NEXT_PRIVATE_ENCRYPTION_KEY" Default="" Mode="" Description="Primary encryption key for stored secrets (&#x2265;32 chars)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+
+  <Config Name="NEXT_PRIVATE_DATABASE_URL" Target="NEXT_PRIVATE_DATABASE_URL" Default="postgresql://user:pass@host:5432/db?sslmode=prefer" Mode="" Description="Primary DB URL (with pooling)" Type="Variable" Display="always" Required="true" Mask="false">postgresql://user:pass@host:5432/db?sslmode=prefer</Config>
+  <Config Name="NEXT_PRIVATE_DIRECT_DATABASE_URL" Target="NEXT_PRIVATE_DIRECT_DATABASE_URL" Default="postgresql://user:pass@host:5432/db?sslmode=prefer" Mode="" Description="Direct DB URL (no pooling; migrations/long queries)" Type="Variable" Display="always" Required="true" Mask="false">postgresql://user:pass@host:5432/db?sslmode=prefer</Config>
+
+  <Config Name="NEXT_PRIVATE_SMTP_TRANSPORT" Target="NEXT_PRIVATE_SMTP_TRANSPORT" Default="smtp-auth" Mode="" Description="Email transport (smtp-auth | smtp-api | resend | mailchannels)" Type="Variable" Display="always" Required="true" Mask="false">smtp-auth</Config>
+  <Config Name="NEXT_PRIVATE_SMTP_HOST" Target="NEXT_PRIVATE_SMTP_HOST" Default="smtp.example.com" Mode="" Description="SMTP host (smtp-auth)" Type="Variable" Display="always" Required="true" Mask="false">smtp.example.com</Config>
+  <Config Name="NEXT_PRIVATE_SMTP_PORT" Target="NEXT_PRIVATE_SMTP_PORT" Default="587" Mode="" Description="SMTP port (smtp-auth; 587 STARTTLS or 465 SSL/TLS)" Type="Variable" Display="always" Required="true" Mask="false">587</Config>
+  <Config Name="NEXT_PRIVATE_SMTP_USERNAME" Target="NEXT_PRIVATE_SMTP_USERNAME" Default="" Mode="" Description="SMTP username (smtp-auth)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="NEXT_PRIVATE_SMTP_PASSWORD" Target="NEXT_PRIVATE_SMTP_PASSWORD" Default="" Mode="" Description="SMTP password/app password (smtp-auth)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="NEXT_PRIVATE_SMTP_FROM_NAME" Target="NEXT_PRIVATE_SMTP_FROM_NAME" Default="Documenso" Mode="" Description="Email 'From' display name" Type="Variable" Display="always" Required="true" Mask="false">Documenso</Config>
+  <Config Name="NEXT_PRIVATE_SMTP_FROM_ADDRESS" Target="NEXT_PRIVATE_SMTP_FROM_ADDRESS" Default="no-reply@example.com" Mode="" Description="Email 'From' address" Type="Variable" Display="always" Required="true" Mask="false">no-reply@example.com</Config>
+
+  <Config Name="Signing Cert (.p12) Path" Target="/opt/documenso/signing" Default="/mnt/user/appdata/documenso/cert.p12" Mode="ro" Description="Host path to PKCS#12 certificate" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/documenso/cert.p12</Config>
+  <Config Name="NEXT_PRIVATE_SIGNING_TRANSPORT" Target="NEXT_PRIVATE_SIGNING_TRANSPORT" Default="local" Mode="" Description="Signing transport (local or cloud provider)" Type="Variable" Display="always" Required="false" Mask="false">local</Config>
+  <Config Name="NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY" Target="NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY" Default="" Mode="" Description="Secondary encryption key (for key rotation; optional)" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="NEXT_PRIVATE_SMTP_SECURE" Target="NEXT_PRIVATE_SMTP_SECURE" Default="false" Mode="" Description="true = SSL/TLS (465), false = STARTTLS (587)" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="NEXT_PRIVATE_SIGNING_PASSPHRASE" Target="NEXT_PRIVATE_SIGNING_PASSPHRASE" Default="" Mode="" Description="Passphrase for the .p12 signing certificate (if set)" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH" Target="NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH" Default="/opt/documenso/cert.p12" Mode="" Description="Override signing cert path inside container (default /opt/documenso/cert.p12)" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+  <Config Name="NEXT_PUBLIC_UPLOAD_TRANSPORT" Target="NEXT_PUBLIC_UPLOAD_TRANSPORT" Default="database" Mode="" Description="Upload backend: database or s3" Type="Variable" Display="advanced" Required="false" Mask="false">database</Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_ENDPOINT" Target="NEXT_PRIVATE_UPLOAD_ENDPOINT" Default="" Mode="" Description="S3 endpoint URL (if using S3/compatible)" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_FORCE_PATH_STYLE" Target="NEXT_PRIVATE_UPLOAD_FORCE_PATH_STYLE" Default="false" Mode="" Description="Force path-style S3 URLs (true/false)" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_REGION" Target="NEXT_PRIVATE_UPLOAD_REGION" Default="us-east-1" Mode="" Description="S3 region" Type="Variable" Display="advanced" Required="false" Mask="false">us-east-1</Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_BUCKET" Target="NEXT_PRIVATE_UPLOAD_BUCKET" Default="" Mode="" Description="S3 bucket name" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_ACCESS_KEY_ID" Target="NEXT_PRIVATE_UPLOAD_ACCESS_KEY_ID" Default="" Mode="" Description="S3 access key ID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="NEXT_PRIVATE_UPLOAD_SECRET_ACCESS_KEY" Target="NEXT_PRIVATE_UPLOAD_SECRET_ACCESS_KEY" Default="" Mode="" Description="S3 secret access key" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+
+  <Config Name="PORT" Target="PORT" Default="3000" Mode="" Description="Internal listening port (normally 3000; don’t change)" Type="Variable" Display="advanced" Required="false" Mask="false">3000</Config>
+  <Config Name="NEXT_PUBLIC_DOCUMENT_SIZE_UPLOAD_LIMIT" Target="NEXT_PUBLIC_DOCUMENT_SIZE_UPLOAD_LIMIT" Default="25" Mode="" Description="Max document upload size shown in UI (MB)" Type="Variable" Display="advanced" Required="false" Mask="false">25</Config>
+
+  <TailscaleStateDir/>
+</Container>
