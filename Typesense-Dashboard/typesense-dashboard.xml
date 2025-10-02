@@ -1,38 +1,37 @@
-<?xml version="1.0"?>
-<Container version="2">
+<Container>
   <Name>Typesense-Dashboard</Name>
-  <Repository>d97tum/typesense-ui-client:latest</Repository>
-  <Registry>https://hub.docker.com/r/d97tum/typesense-ui-client</Registry>
+  <Repository>ghcr.io/bfritscher/typesense-dashboard:latest</Repository>
+  <Registry>https://github.com/bfritscher/typesense-dashboard/pkgs/container/typesense-dashboard</Registry>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>/bin/sh</Shell>
   <Privileged>false</Privileged>
 
-  <ReadMe/>
   <Support>https://forums.unraid.net/topic/193903-support-eurotimmy-typesense-typesense-dashboard/</Support>
-  <Project>https://hub.docker.com/r/d97tum/typesense-ui-client</Project>
-  <Beta>False</Beta>
+  <Project>https://github.com/bfritscher/typesense-dashboard</Project>
+  <Overview>
+A lightweight, feature-rich web dashboard for managing and browsing your Typesense collections.
 
-  <ExtraSearchTerms>typesense dashboard ui admin console gui</ExtraSearchTerms>
+• Default WebUI: http://[IP]:[PORT:80]/  
+• Optional auto-login: mount a JSON file to /srv/config.json (contains your Typesense host/port/protocol and API key).  
+• If serving behind a sub-path, set PUBLIC_PATH (e.g. "/dashboard").  
+• If your Typesense server is on a different origin, ensure it’s started with CORS enabled.
 
-  <Overview>Lightweight web UI for Typesense to browse collections, run searches and perform basic document edits. This container exposes the dashboard on port 8081 and connects to your Typesense API using environment variables.&#xD;
-&#xD;
-:: IMPORTANT NOTES ::&#xD;
-• Use a **scoped key** for read/search actions. For admin operations (e.g., schema changes), use an admin/scoped key with the minimum required actions.&#xD;
-• If the dashboard is served from a different origin than Typesense (e.g., 8081 → 8108), ensure CORS is enabled on Typesense (TYPESENSE_ENABLE_CORS=true).&#xD;
-• For HTTPS dashboards connecting to HTTP Typesense, your browser may block mixed content. Prefer HTTPS end-to-end.&#xD;
-</Overview>
+Note: When binding a single file, Docker will create a directory if the host path doesn’t exist. Create the file first.
+  </Overview>
+  <Category>Productivity: Tools</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
 <Icon>https://github.com/Eurotimmy/unraid-templates/blob/main/Typesense-Dashboard/typesense-dashboard.png</Icon>
 <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/master/Typesense-Dashboard/typesense-dashboard.xml</TemplateURL>
-  <Category>Other:</Category>
-  <WebUI>http://[IP]:[PORT:8081]/</WebUI>
+  <ExtraParams/>
+  <PostArgs/>
 
-  <!-- Ports -->
-  <Config Name="Dashboard Port" Target="8081" Default="8081" Mode="tcp" Description="Web UI port" Type="Port" Display="always" Required="false" Mask="false">8081</Config>
+  <!-- Port: host 8080 -> container 80 -->
+  <Config Name="WebUI Port" Target="80" Default="8080" Mode="tcp" Description="Container listens on 80. Change host port if 8080 is in use." Type="Port" Display="always" Required="true" Mask="false"/>
 
-  <!-- Environment for connecting to your Typesense server -->
-  <Config Name="Typesense Host" Target="TYPESENSE_HOST" Default="" Mode="" Description="Hostname or IP of your Typesense server" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Typesense Port" Target="TYPESENSE_PORT" Default="8108" Mode="" Description="Typesense API port" Type="Variable" Display="always" Required="true" Mask="false">8108</Config>
-  <Config Name="Typesense Protocol" Target="TYPESENSE_PROTOCOL" Default="http" Mode="" Description="http or https" Type="Variable" Display="always" Required="true" Mask="false">http</Config>
-  <Config Name="Typesense API Key" Target="TYPESENSE_API_KEY" Default="" Mode="" Description="Admin or scoped API key to use from the dashboard (mask this)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <!-- Optional: prefill connection + API key for auto-login (bind a single FILE) -->
+  <Config Name="Auto-login config (optional)" Target="/srv/config.json" Default="/mnt/user/appdata/typesense-dashboard/config.json" Mode="rw" Description="Bind a file that exists on the host. IMPORTANT: create it first or Docker will make a folder." Type="Path" Display="always" Required="false" Mask="false"/>
+
+  <!-- Optional: serve UI from a sub-path, e.g. /dashboard -->
+  <Config Name="PUBLIC_PATH" Target="PUBLIC_PATH" Default="/" Mode="" Description="Set to a sub-path (must start with '/') if you’re serving behind a reverse-proxy subfolder." Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
