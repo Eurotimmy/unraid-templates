@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Odoo19</Name>
+  <Repository>odoo:19</Repository>
+  <Registry>https://hub.docker.com/_/odoo</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo19/README.md</ReadMe>
+  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-odoo18/</Support>
+  <Project>https://github.com/odoo/docker</Project>
+  <Beta>True</Beta>
+  <ExtraSearchTerms>odoo odoo19 ERP CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
+  <Overview>Odoo is an open-source suite of integrated business applications that includes various modules for different business functions such as accounting, project management, inventory management, human resources, and more. It provides a comprehensive and modular solution for businesses to manage and streamline their processes.&#xD;
+&#xD;
+Odoo is the world's easiest all-in-one management software.&#xD;
+&#xD;
+It includes hundreds of business apps:&#xD;
+CRM | e-Commerce | Accounting | Inventory | PoS | Project management | MRP&#xD;
+&#xD;
+:: IMPORTANT NOTES ::&#xD;
+** BETA ** This Odoo 19 template is new and not yet fully tested on Unraid. Please report any issues in the support thread.&#xD;
+Odoo 19 requires PostgreSQL 13 or later. A separate PostgreSQL container is required.&#xD;
+See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo19/README.md</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8069]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo19/odoo19.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Odoo19/odoo.png</Icon>
+  <ExtraParams>--user=100:101</ExtraParams>
+  <PostArgs>-i base</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>PostgreSQL 13 or later (e.g. postgresql16 / postgresql17) from Community Applications</Requires>
+  <Changes>### 2026-10-20&#xD;
+- Initial Odoo 19 template (beta - not yet fully tested)</Changes>
+  <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access the Odoo web interface" Type="Port" Display="always" Required="true" Mask="false">8069</Config>
+  <Config Name="Live Chat / WebSocket Port" Target="8072" Default="8072" Mode="tcp" Description="Only needed if you set workers above 0 in odoo.conf (multi-process mode). Route /websocket to this port in your reverse proxy." Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Data Location" Target="/var/lib/odoo" Default="/mnt/user/appdata/odoo19/data" Mode="rw" Description="Odoo filestore (attachments, sessions, etc.)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo19/data</Config>
+  <Config Name="Config Location" Target="/etc/odoo" Default="/mnt/user/appdata/odoo19/config" Mode="rw" Description="Directory containing odoo.conf" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo19/config</Config>
+  <Config Name="Addons Location" Target="/mnt/extra-addons" Default="/mnt/user/appdata/odoo19/extra-addons" Mode="rw" Description="Custom/community addons (must be Odoo 19 compatible)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo19/extra-addons</Config>
+</Container>
