@@ -5,7 +5,7 @@
 - Installing the Odoo container in Unraid... the template defaults should work as-is (this was the case for Odoo18)
 - Odoo19 requires **PostgreSQL 13 or later** (PostgreSQL 16 or 17 from CA is a good choice)
 - Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
-- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-odoo18/), please post any questions or contributions
+- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19/), please post any questions or contributions
 
 
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)

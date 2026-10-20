@@ -8,7 +8,7 @@
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo19/README.md</ReadMe>
-  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-odoo18/</Support>
+  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19/</Support>
   <Project>https://github.com/odoo/docker</Project>
   <Beta>True</Beta>
   <ExtraSearchTerms>odoo odoo19 ERP CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
