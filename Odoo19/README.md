@@ -1,11 +1,18 @@
 # Notes for using Odoo19 on an Unraid server via the CA installation
 
-> **BETA:** This Odoo19 template is new and has not yet been fully tested on Unraid. It is based on the Odoo18 template and the official Odoo 19 Docker image. Please report anything that doesn't work in the support thread (linked below) so it can be fixed.
+> [!CAUTION]
+> **BETA – NOT YET TESTED ON UNRAID. DO NOT USE WITH PRODUCTION DATA WITHOUT TESTING FIRST.**
+>
+> This Odoo19 template is new and has not been fully tested on Unraid. It is based on the earlier Odoo templates and the official Odoo 19 Docker image. Test it on a separate, non-production setup first, and keep backups of your PostgreSQL database and filestore.
+>
+> These templates and notes are provided as-is, free of charge, with no warranty of any kind. You use them at your own risk. I accept no responsibility for any loss of data, downtime or other issues arising from their use, or for any due diligence you choose not to do beforehand.
+>
+> Please report anything that does or doesn't work in the [support thread](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19-20/).
 
-- Installing the Odoo container in Unraid... the template defaults should work as-is (this was the case for Odoo18)
+- Installing the Odoo container in Unraid... the template defaults are expected to work as-is (as they did for Odoo18), but this has not yet been confirmed for Odoo19
 - Odoo19 requires **PostgreSQL 13 or later** (PostgreSQL 16 or 17 from CA is a good choice)
 - Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
-- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19/), please post any questions or contributions
+- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19-20/), please post any questions or contributions
 
 
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)

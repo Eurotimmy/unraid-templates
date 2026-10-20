@@ -8,7 +8,7 @@
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo19/README.md</ReadMe>
-  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19/</Support>
+  <Support>https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19-20/</Support>
   <Project>https://github.com/odoo/docker</Project>
   <Beta>True</Beta>
   <ExtraSearchTerms>odoo odoo19 ERP CRM e-Commerce Accounting Inventory PoS Project management MRP</ExtraSearchTerms>
@@ -20,7 +20,9 @@ It includes hundreds of business apps:&#xD;
 CRM | e-Commerce | Accounting | Inventory | PoS | Project management | MRP&#xD;
 &#xD;
 :: IMPORTANT NOTES ::&#xD;
-** BETA ** This Odoo 19 template is new and not yet fully tested on Unraid. Please report any issues in the support thread.&#xD;
+*** BETA - NOT YET TESTED ON UNRAID ***&#xD;
+Do NOT use with production data without testing first. Provided as-is with no warranty; use at your own risk. The template author accepts no responsibility for any loss of data. Keep backups and do your own due diligence.&#xD;
+&#xD;
 Odoo 19 requires PostgreSQL 13 or later. A separate PostgreSQL container is required.&#xD;
 See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/main/Odoo19/README.md</Overview>
   <Category>Productivity: Tools:</Category>
@@ -34,7 +36,7 @@ See the README.md file at https://github.com/Eurotimmy/unraid-templates/blob/mai
   <DonateLink/>
   <Requires>PostgreSQL 13 or later (e.g. postgresql16 / postgresql17) from Community Applications</Requires>
   <Changes>### 2026-10-20&#xD;
-- Initial Odoo 19 template (beta - not yet fully tested)</Changes>
+- Initial Odoo 19 template (BETA - not yet tested on Unraid)</Changes>
   <Config Name="WebUI Port" Target="8069" Default="8069" Mode="tcp" Description="Port to access the Odoo web interface" Type="Port" Display="always" Required="true" Mask="false">8069</Config>
   <Config Name="Live Chat / WebSocket Port" Target="8072" Default="8072" Mode="tcp" Description="Only needed if you set workers above 0 in odoo.conf (multi-process mode). Route /websocket to this port in your reverse proxy." Type="Port" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Data Location" Target="/var/lib/odoo" Default="/mnt/user/appdata/odoo19/data" Mode="rw" Description="Odoo filestore (attachments, sessions, etc.)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/odoo19/data</Config>

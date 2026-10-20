@@ -1,8 +1,10 @@
 # Notes for using Odoo17 on an Unraid server via the CA installation
 
+> **Disclaimer:** These templates and notes are provided as-is, free of charge, with no warranty of any kind. You use them at your own risk. I accept no responsibility for any loss of data, downtime or other issues arising from their use. Please do your own due diligence, keep backups, and test before relying on any setup.
+
 - Installing the Odoo container in Unraid... I didn't need to adjust anything from the defaults in the template
 - Installing PostgreSQL was also straight-forward and you'll only need to note down the settings you select here to transpose into the 'odoo.conf' file (detailed below)
-- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19/), please post any questions or contributions
+- The support thread for this container is located in the Unraid Forums [here](https://forums.unraid.net/topic/150914-support-eurotimmy-odoo17-18-19-20/), please post any questions or contributions
 
 
 ### ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) **IMPORTANT NOTE** ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
