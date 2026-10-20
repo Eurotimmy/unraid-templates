@@ -7,6 +7,6 @@ Here are the source repos / details about each application:
 4. [RomM](https://github.com/rommapp/romm)
 5. [Odoo 17](https://hub.docker.com/_/odoo/)
 6. [Odoo 18](https://hub.docker.com/_/odoo/)
-7. [Odoo 19 (BETA)](https://hub.docker.com/_/odoo/)
-8. [Odoo 20 (BETA)](https://hub.docker.com/_/odoo/)
+7. [Odoo 19 (BETA - UNTESTED)](https://hub.docker.com/_/odoo/)
+8. [Odoo 20 (BETA - UNTESTED)](https://hub.docker.com/_/odoo/)
 9. [Reactive Resume V4](https://github.com/AmruthPillai/Reactive-Resume)
