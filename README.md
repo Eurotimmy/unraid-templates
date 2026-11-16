@@ -10,3 +10,4 @@ Here are the source repos / details about each application:
 7. [Odoo 19 (BETA - UNTESTED)](https://hub.docker.com/_/odoo/)
 8. [Odoo 20 (BETA - UNTESTED)](https://hub.docker.com/_/odoo/)
 9. [Reactive Resume V4](https://github.com/AmruthPillai/Reactive-Resume)
+10. [Ultrafeeder (ADS-B)](https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder) (by SDR-Enthusiasts)

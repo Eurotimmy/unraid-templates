@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Ultrafeeder</Name>
+  <Repository>ghcr.io/sdr-enthusiasts/docker-adsb-ultrafeeder:latest</Repository>
+  <Registry>https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder/pkgs/container/docker-adsb-ultrafeeder</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Ultrafeeder/README.md</ReadMe>
+  <Support>https://github.com/Eurotimmy/unraid-templates/issues</Support>
+  <Project>https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder</Project>
+  <Beta>False</Beta>
+
+  <ExtraSearchTerms>adsb ads-b readsb tar1090 graphs1090 dump1090 rtl-sdr rtlsdr sdr flightradar24 fr24 flightaware piaware adsbexchange adsb.fi airplanes.live mlat aircraft plane tracker radar bias-tee lna 1090</ExtraSearchTerms>
+
+  <Overview>Ultrafeeder is the SDR-Enthusiasts all-in-one ADS-B container: it decodes 1090 MHz aircraft signals from an RTL-SDR dongle with readsb, shows them on a live tar1090 map, graphs your reception with graphs1090, and can feed many aggregators (adsb.fi, airplanes.live, ADSBExchange and others) with MLAT.&#xD;
+&#xD;
+It also works as a "receiver" for other feeder containers. For example, the FR24/FlightAware all-in-one containers can take their data from Ultrafeeder's Beast output (port 30005) instead of opening the dongle themselves.&#xD;
+&#xD;
+:: QUICK START ::&#xD;
+1. Plug in your RTL-SDR dongle. Make sure no other container (dump1090, fr24feed-piaware, etc.) is using it.&#xD;
+2. Set your receiver latitude, longitude and altitude (metres, e.g. 18m).&#xD;
+3. Start the container and open the WebUI. Aircraft should appear within a minute.&#xD;
+&#xD;
+:: POWERING AN LNA (BIAS-TEE) ::&#xD;
+If you use a bias-tee powered LNA/filter with an RTL-SDR Blog V3/V4, set "Enable Bias-Tee" to true AND put --enable-biastee in "Extra readsb Arguments". The second setting makes readsb keep the bias-tee on after it opens the dongle; some decoders reset it, which leaves the LNA unpowered and blocking signal.&#xD;
+&#xD;
+:: GAIN ::&#xD;
+"auto" uses readsb's built-in auto-gain (recommended by SDR-Enthusiasts). You can also set a fixed value in dB, e.g. 40.2.&#xD;
+&#xD;
+:: FEEDING AGGREGATORS ::&#xD;
+Use ULTRAFEEDER_CONFIG to add feeds, e.g. adsb,feed.adsb.fi,30004,beast_reduce_plus_out;mlat,feed.adsb.fi,31090 and set UUID (generate one with: cat /proc/sys/kernel/random/uuid). See the project README for the full list.&#xD;
+&#xD;
+This is a community template. It is not affiliated with SDR-Enthusiasts. Please report template problems via the Support link.&#xD;
+</Overview>
+
+  <Category>Tools: HomeAutomation: Other:</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Ultrafeeder/ultrafeeder.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Ultrafeeder/ultrafeeder.png</Icon>
+
+  <ExtraParams>--device-cgroup-rule='c 189:* rwm' --tmpfs /run:exec,size=256M --tmpfs /tmp:size=128M --tmpfs /var/log:size=32M</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>An RTL-SDR (or other readsb-supported) receiver connected to the Unraid server. Only one container can use a given dongle at a time.</Requires>
+
+  <!-- Ports -->
+  <Config Name="WebUI (tar1090 map)" Target="80" Default="8080" Mode="tcp" Description="tar1090 live map, graphs1090 (/graphs1090/) and stats. Change the host port if 8080 is already in use." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Beast output" Target="30005" Default="30005" Mode="tcp" Description="Beast data output. Point other feeder containers here (host IP:30005), e.g. fr24feed-piaware with SERVICE_ENABLE_IMPORT_OVER_NETCAT." Type="Port" Display="always" Required="false" Mask="false">30005</Config>
+  <Config Name="SBS/BaseStation output" Target="30003" Default="30003" Mode="tcp" Description="SBS (BaseStation) format output for tools such as Virtual Radar Server." Type="Port" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="JSON position output" Target="30047" Default="30047" Mode="tcp" Description="JSON position output." Type="Port" Display="advanced" Required="false" Mask="false"></Config>
+
+  <!-- Location -->
+  <Config Name="Receiver latitude" Target="READSB_LAT" Default="" Mode="" Description="Your receiver's latitude in decimal degrees, e.g. -28.0875" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Receiver longitude" Target="READSB_LON" Default="" Mode="" Description="Your receiver's longitude in decimal degrees, e.g. 153.3922" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Receiver altitude" Target="READSB_ALT" Default="" Mode="" Description="Antenna altitude above sea level with unit, e.g. 18m or 60ft" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+
+  <!-- SDR -->
+  <Config Name="Device type" Target="READSB_DEVICE_TYPE" Default="rtlsdr" Mode="" Description="rtlsdr for RTL-SDR dongles. Other options: modesbeast, gnshulc. Leave empty if this container only receives network data." Type="Variable" Display="always" Required="false" Mask="false">rtlsdr</Config>
+  <Config Name="RTL-SDR serial" Target="READSB_RTLSDR_DEVICE" Default="" Mode="" Description="Optional. Serial number of the dongle to use. Only needed if you have more than one RTL-SDR." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Gain" Target="READSB_GAIN" Default="auto" Mode="" Description="auto = readsb built-in auto-gain (recommended). Or a fixed value in dB such as 40.2. autogain = legacy slow auto-gain script." Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
+  <Config Name="PPM correction" Target="READSB_RTLSDR_PPM" Default="" Mode="" Description="Optional oscillator correction in PPM. Usually not needed for TCXO dongles such as the RTL-SDR Blog V3/V4." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Enable Bias-Tee" Target="READSB_ENABLE_BIASTEE" Default="false" Mode="" Description="true to power a bias-tee LNA/filter through the coax (RTL-SDR Blog V3/V4 and similar). Also add --enable-biastee to Extra readsb Arguments." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Extra readsb Arguments" Target="READSB_EXTRA_ARGS" Default="" Mode="" Description="Extra arguments passed to readsb. For a bias-tee powered LNA use: --enable-biastee" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+
+  <!-- Feeding -->
+  <Config Name="Ultrafeeder config (feeds)" Target="ULTRAFEEDER_CONFIG" Default="" Mode="" Description="Optional semicolon-separated list of feeds/MLAT/inputs. See the project README (ULTRAFEEDER_CONFIG section)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Feeder UUID" Target="UUID" Default="" Mode="" Description="Optional. Unique ID sent to aggregators. Generate with: cat /proc/sys/kernel/random/uuid" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="MLAT user name" Target="MLAT_USER" Default="" Mode="" Description="Optional. Name shown on aggregator MLAT sync maps." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+  <!-- Display / misc -->
+  <Config Name="Location accuracy" Target="READSB_RX_LOCATION_ACCURACY" Default="2" Mode="" Description="0 = no location, 1 = 2 decimals, 2 = exact, 3 = 1 decimal, 4 = 0 decimals" Type="Variable" Display="advanced" Required="false" Mask="false">2</Config>
+  <Config Name="Collect range statistics" Target="READSB_STATS_RANGE" Default="true" Mode="" Description="true to collect range statistics for the graphs1090 polar plot." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Update tar1090 at start" Target="UPDATE_TAR1090" Default="true" Mode="" Description="true to update tar1090 and its aircraft database at container start." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Map page title" Target="TAR1090_PAGETITLE" Default="Ultrafeeder" Mode="" Description="Title shown on the tar1090 map page." Type="Variable" Display="advanced" Required="false" Mask="false">Ultrafeeder</Config>
+  <Config Name="Log level" Target="LOGLEVEL" Default="error" Mode="" Description="verbose, error or none" Type="Variable" Display="advanced" Required="false" Mask="false">error</Config>
+
+  <!-- Paths -->
+  <Config Name="Globe history" Target="/var/globe_history" Default="/mnt/user/appdata/ultrafeeder/globe_history" Mode="rw" Description="Persistent tar1090 history and readsb state." Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/ultrafeeder/globe_history</Config>
+  <Config Name="Graphs data" Target="/var/lib/collectd" Default="/mnt/user/appdata/ultrafeeder/graphs1090" Mode="rw" Description="Persistent graphs1090 data." Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/ultrafeeder/graphs1090</Config>
+  <Config Name="USB bus" Target="/dev/bus/usb" Default="/dev/bus/usb" Mode="rw" Description="Gives the container access to the RTL-SDR USB device." Type="Path" Display="advanced" Required="true" Mask="false">/dev/bus/usb</Config>
+  <Config Name="Disk stats (graphs)" Target="/proc/diskstats" Default="/proc/diskstats" Mode="ro" Description="Read-only, used by graphs1090 for system graphs." Type="Path" Display="advanced" Required="false" Mask="false">/proc/diskstats</Config>
+</Container>
