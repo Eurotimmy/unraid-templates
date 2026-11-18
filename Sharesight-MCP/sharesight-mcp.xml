@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Sharesight-MCP</Name>
+  <Repository>ghcr.io/lethek/sharesight-mcp:latest</Repository>
+  <Registry>https://github.com/lethek/sharesight-mcp/pkgs/container/sharesight-mcp</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <ReadMe>https://github.com/Eurotimmy/unraid-templates/blob/main/Sharesight-MCP/README.md</ReadMe>
+  <Support>https://github.com/Eurotimmy/unraid-templates/issues</Support>
+  <Project>https://github.com/lethek/sharesight-mcp</Project>
+  <Beta>False</Beta>
+
+  <ExtraSearchTerms>sharesight mcp model context protocol ai claude chatgpt llm portfolio shares stocks investing dividends tax holdings trades</ExtraSearchTerms>
+
+  <Overview>An MCP (Model Context Protocol) server that lets AI assistants such as Claude read your Sharesight portfolio: portfolios, holdings, trades, payouts, performance and tax reports, cash accounts and more. Unofficial; uses the Sharesight v3 API.&#xD;
+&#xD;
+:: BEFORE YOU START ::&#xD;
+You need Sharesight API access. Request it from support@sharesight.com, then copy your Client ID and Client Secret from your Sharesight API application. API access may require a particular Sharesight plan.&#xD;
+&#xD;
+:: QUICK START ::&#xD;
+1. Enter your Sharesight Client ID and Client Secret.&#xD;
+2. Set MCP Auth Token to a long random string (e.g. run: openssl rand -hex 32). The container will not start without it. Every MCP client must send it as: Authorization: Bearer YOUR_TOKEN&#xD;
+3. Start the container. The MCP endpoint is http://SERVER:3000/mcp and a health check is at /healthz.&#xD;
+&#xD;
+:: SAFE BY DEFAULT ::&#xD;
+This template starts in READ-ONLY mode (25 read tools). Set Read-only mode to false only if you want the AI to be able to create, change or delete trades, payouts and other data in Sharesight.&#xD;
+&#xD;
+:: SECURITY ::&#xD;
+This server holds credentials to your financial data. Keep it on your LAN or VPN (e.g. Tailscale). If you publish it through a reverse proxy, put strong authentication in front of it and never share the auth token.&#xD;
+&#xD;
+This is a community template. It is not affiliated with Sharesight or the sharesight-mcp authors. Please report template problems via the Support link.&#xD;
+</Overview>
+
+  <Category>Tools: Productivity:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Sharesight-MCP/sharesight-mcp.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Eurotimmy/unraid-templates/main/Sharesight-MCP/sharesight-mcp.png</Icon>
+  <Requires>Sharesight API access (Client ID and Client Secret). Request it from support@sharesight.com.</Requires>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText>I make the templates; you make the magic. If this was useful, shout me a coffee?</DonateText>
+  <DonateLink>https://www.paypal.com/donate/?hosted_button_id=NU5FVN8NDE4S8</DonateLink>
+
+  <Config Name="MCP port" Target="3000" Default="3000" Mode="tcp" Description="HTTP port for the MCP endpoint (/mcp) and health check (/healthz). Change the host port if 3000 is already in use." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Sharesight Client ID" Target="SHARESIGHT_CLIENT_ID" Default="" Mode="" Description="Client ID of your Sharesight API application." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Sharesight Client Secret" Target="SHARESIGHT_CLIENT_SECRET" Default="" Mode="" Description="Client Secret of your Sharesight API application." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="MCP Auth Token" Target="MCP_AUTH_TOKEN" Default="" Mode="" Description="Required. A long random string (e.g. openssl rand -hex 32). Clients must send it as an 'Authorization: Bearer' header. The container will not start without it." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Read-only mode" Target="MCP_READ_ONLY" Default="true|false" Mode="" Description="true (default here) removes every tool that creates, changes or deletes Sharesight data. Set false to allow writes." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Cursor secret" Target="MCP_CURSOR_SECRET" Default="" Mode="" Description="Optional. Signs pagination cursors. If empty, a new random value is used on every start, so cursors stop working after a restart. Set any long random string to keep them valid." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Max response characters" Target="MCP_MAX_RESPONSE_CHARS" Default="30000" Mode="" Description="Size limit for one page of a list, in characters (minimum 5000). Keep it under your AI client's tool-output limit." Type="Variable" Display="advanced" Required="false" Mask="false">30000</Config>
+  <Config Name="Holdings cache (seconds)" Target="MCP_CACHE_TTL_SECONDS" Default="60" Mode="" Description="How long the holdings list is cached for later pages. 0 turns the cache off." Type="Variable" Display="advanced" Required="false" Mask="false">60</Config>
+  <Config Name="Attachments folder" Target="/attachments" Default="" Mode="ro" Description="Optional. Host folder holding files (e.g. contract notes) the AI may attach to trades and payouts. Only used when Read-only mode is false and Attachments root is set to /attachments." Type="Path" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Attachments root" Target="MCP_DATA_ROOT" Default="" Mode="" Description="Optional. Set to /attachments to enable uploading attachments from the folder above. Leave empty if you do not use attachments (the server refuses to start if this points to a folder that does not exist)." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Max attachment size (bytes)" Target="MCP_MAX_ATTACHMENT_BYTES" Default="10485760" Mode="" Description="Largest attachment, in bytes." Type="Variable" Display="advanced" Required="false" Mask="false">10485760</Config>
+  <Config Name="Sharesight API base URL" Target="SHARESIGHT_BASE_URL" Default="https://api.sharesight.com" Mode="" Description="Leave as is unless you are testing or using a proxy. Must be https." Type="Variable" Display="advanced" Required="false" Mask="false">https://api.sharesight.com</Config>
+</Container>
