@@ -26,7 +26,7 @@ claude mcp add --transport http sharesight http://SERVER:3000/mcp \
 
 ## Read-only by default
 
-The upstream server defaults to read **and** write. This template defaults **Read-only mode** (`MCP_READ_ONLY`) to `true`, which leaves 25 read tools and removes everything that creates, changes or deletes data. Set it to `false` only if you want your AI assistant to be able to edit Sharesight.
+The upstream server defaults to read **and** write. This template defaults **Read-only mode** (`MCP_READ_ONLY`) to `true`, which leaves only the read tools and removes everything that creates, changes or deletes data. Set it to `false` only if you want your AI assistant to be able to edit Sharesight.
 
 ## Settings
 

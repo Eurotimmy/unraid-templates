@@ -26,7 +26,7 @@ You need Sharesight API access. Request it from support@sharesight.com, then cop
 3. Start the container. The MCP endpoint is http://SERVER:3000/mcp and a health check is at /healthz.&#xD;
 &#xD;
 :: SAFE BY DEFAULT ::&#xD;
-This template starts in READ-ONLY mode (25 read tools). Set Read-only mode to false only if you want the AI to be able to create, change or delete trades, payouts and other data in Sharesight.&#xD;
+This template starts in READ-ONLY mode (read tools only). Set Read-only mode to false only if you want the AI to be able to create, change or delete trades, payouts and other data in Sharesight.&#xD;
 &#xD;
 :: SECURITY ::&#xD;
 This server holds credentials to your financial data. Keep it on your LAN or VPN (e.g. Tailscale). If you publish it through a reverse proxy, put strong authentication in front of it and never share the auth token.&#xD;
