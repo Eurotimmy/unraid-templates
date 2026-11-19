@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Sharesight-MCP</Name>
-  <Repository>ghcr.io/lethek/sharesight-mcp:latest</Repository>
+  <Repository>ghcr.io/lethek/sharesight-mcp:main</Repository>
   <Registry>https://github.com/lethek/sharesight-mcp/pkgs/container/sharesight-mcp</Registry>
   <Network>bridge</Network>
   <MyIP/>
