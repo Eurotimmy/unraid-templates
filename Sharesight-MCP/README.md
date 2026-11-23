@@ -28,6 +28,20 @@ claude mcp add --transport http sharesight http://SERVER:3000/mcp \
 
 The upstream server defaults to read **and** write. This template defaults **Read-only mode** (`MCP_READ_ONLY`) to `true`, which leaves only the read tools and removes everything that creates, changes or deletes data. Set it to `false` only if you want your AI assistant to be able to edit Sharesight.
 
+## Image tag
+
+The template installs `ghcr.io/lethek/sharesight-mcp:latest`. The upstream project publishes these tags:
+
+| Tag | Follows | Use it if |
+|---|---|---|
+| `latest` (template default) | The newest release (`v*` tag), skipping prereleases | You want tested releases and updates only when a new version ships. |
+| `main` | Every commit pushed to `main` | You want new features and fixes straight away and accept they are unreleased. |
+| `2.0.0`, `2.0`, `2` | A fixed release, or the newest release in that major/minor line | You want to control exactly when you upgrade. |
+
+To change it, edit the container in Unraid and change **Repository**, for example to `ghcr.io/lethek/sharesight-mcp:main`, then click **Apply**.
+
+Templates before 23 November 2026 used `main`. Existing installs keep whatever Repository they were created with, so if you installed earlier and want to follow releases instead, edit the container and change `:main` to `:latest`.
+
 ## Settings
 
 | Setting | Variable | Default | Notes |
