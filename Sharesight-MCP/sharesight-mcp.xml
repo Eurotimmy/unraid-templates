@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Sharesight-MCP</Name>
-  <Repository>ghcr.io/lethek/sharesight-mcp:main</Repository>
+  <Repository>ghcr.io/lethek/sharesight-mcp:latest</Repository>
   <Registry>https://github.com/lethek/sharesight-mcp/pkgs/container/sharesight-mcp</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -27,6 +27,9 @@ You need Sharesight API access. Request it from support@sharesight.com, then cop
 &#xD;
 :: SAFE BY DEFAULT ::&#xD;
 This template starts in READ-ONLY mode (read tools only). Set Read-only mode to false only if you want the AI to be able to create, change or delete trades, payouts and other data in Sharesight.&#xD;
+&#xD;
+:: IMAGE TAG ::&#xD;
+This template uses the latest tag, which only moves when a new version of sharesight-mcp is released. To get every change as soon as it is committed (less tested), edit the container and change the Repository to ghcr.io/lethek/sharesight-mcp:main. To stay on one version, use a version tag such as ghcr.io/lethek/sharesight-mcp:2.0.0.&#xD;
 &#xD;
 :: SECURITY ::&#xD;
 This server holds credentials to your financial data. Keep it on your LAN or VPN (e.g. Tailscale). If you publish it through a reverse proxy, put strong authentication in front of it and never share the auth token.&#xD;
